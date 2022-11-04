@@ -36,8 +36,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnBajaUbicacion = new System.Windows.Forms.Button();
             this.btnAltaUbicacion = new System.Windows.Forms.Button();
-            this.aulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edificioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ubicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUbicacion)).BeginInit();
@@ -60,11 +60,14 @@
             // 
             this.dataUbicacion.AllowUserToAddRows = false;
             this.dataUbicacion.AllowUserToDeleteRows = false;
+            this.dataUbicacion.AllowUserToResizeColumns = false;
+            this.dataUbicacion.AllowUserToResizeRows = false;
             this.dataUbicacion.AutoGenerateColumns = false;
+            this.dataUbicacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataUbicacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataUbicacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.aulaDataGridViewTextBoxColumn,
-            this.edificioDataGridViewTextBoxColumn});
+            this.edificioDataGridViewTextBoxColumn,
+            this.aulaDataGridViewTextBoxColumn});
             this.dataUbicacion.DataSource = this.ubicacionBindingSource;
             this.dataUbicacion.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataUbicacion.Location = new System.Drawing.Point(3, 16);
@@ -100,6 +103,7 @@
             this.btnRefrescarUbicacion.TabIndex = 3;
             this.btnRefrescarUbicacion.Text = "Refrescar";
             this.btnRefrescarUbicacion.UseVisualStyleBackColor = true;
+            this.btnRefrescarUbicacion.Click += new System.EventHandler(this.btnRefrescarUbicacion_Click);
             // 
             // button3
             // 
@@ -109,6 +113,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Modificar Ubicacion";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnBajaUbicacion
             // 
@@ -118,6 +123,7 @@
             this.btnBajaUbicacion.TabIndex = 1;
             this.btnBajaUbicacion.Text = "Eliminar Ubicacion";
             this.btnBajaUbicacion.UseVisualStyleBackColor = true;
+            this.btnBajaUbicacion.Click += new System.EventHandler(this.btnBajaUbicacion_Click);
             // 
             // btnAltaUbicacion
             // 
@@ -129,19 +135,19 @@
             this.btnAltaUbicacion.UseVisualStyleBackColor = true;
             this.btnAltaUbicacion.Click += new System.EventHandler(this.btnAltaUbicacion_Click);
             // 
-            // aulaDataGridViewTextBoxColumn
-            // 
-            this.aulaDataGridViewTextBoxColumn.DataPropertyName = "Aula";
-            this.aulaDataGridViewTextBoxColumn.HeaderText = "Aula";
-            this.aulaDataGridViewTextBoxColumn.Name = "aulaDataGridViewTextBoxColumn";
-            this.aulaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // edificioDataGridViewTextBoxColumn
             // 
             this.edificioDataGridViewTextBoxColumn.DataPropertyName = "Edificio";
             this.edificioDataGridViewTextBoxColumn.HeaderText = "Edificio";
             this.edificioDataGridViewTextBoxColumn.Name = "edificioDataGridViewTextBoxColumn";
             this.edificioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aulaDataGridViewTextBoxColumn
+            // 
+            this.aulaDataGridViewTextBoxColumn.DataPropertyName = "Aula";
+            this.aulaDataGridViewTextBoxColumn.HeaderText = "Aula";
+            this.aulaDataGridViewTextBoxColumn.Name = "aulaDataGridViewTextBoxColumn";
+            this.aulaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ubicacionBindingSource
             // 
@@ -169,12 +175,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataUbicacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aulaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edificioDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource ubicacionBindingSource;
         private System.Windows.Forms.Button btnRefrescarUbicacion;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnBajaUbicacion;
         private System.Windows.Forms.Button btnAltaUbicacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn edificioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aulaDataGridViewTextBoxColumn;
     }
 }

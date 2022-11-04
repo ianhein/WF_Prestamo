@@ -55,7 +55,7 @@ namespace WF_Prestamo.Forms
 
         private void ModificarProfesor_Click(object sender, EventArgs e)
         {
-            new fmModificarProfesor(((Profesor)profesorBindingSource.Current)).ShowDialog();
+            new fmModificarProfesor((Profesor)profesorBindingSource.Current).ShowDialog();
 
             Conexion.OpenConexion();
             profesorBindingSource.DataSource = pProfesor.GetAll();

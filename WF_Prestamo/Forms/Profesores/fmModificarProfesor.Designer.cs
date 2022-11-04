@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ModificarProfeNombre = new System.Windows.Forms.Label();
             this.ModificarProfeApellido = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +48,10 @@
             this.textBox1.Size = new System.Drawing.Size(145, 20);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // profesorBindingSource
+            // 
+            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
             // 
             // textBox2
             // 
@@ -61,7 +65,7 @@
             // ModificarProfeNombre
             // 
             this.ModificarProfeNombre.AutoSize = true;
-            this.ModificarProfeNombre.Location = new System.Drawing.Point(26, 39);
+            this.ModificarProfeNombre.Location = new System.Drawing.Point(26, 42);
             this.ModificarProfeNombre.Name = "ModificarProfeNombre";
             this.ModificarProfeNombre.Size = new System.Drawing.Size(47, 13);
             this.ModificarProfeNombre.TabIndex = 7;
@@ -70,7 +74,7 @@
             // ModificarProfeApellido
             // 
             this.ModificarProfeApellido.AutoSize = true;
-            this.ModificarProfeApellido.Location = new System.Drawing.Point(26, 65);
+            this.ModificarProfeApellido.Location = new System.Drawing.Point(26, 68);
             this.ModificarProfeApellido.Name = "ModificarProfeApellido";
             this.ModificarProfeApellido.Size = new System.Drawing.Size(47, 13);
             this.ModificarProfeApellido.TabIndex = 8;
@@ -98,15 +102,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 12);
+            this.label1.Location = new System.Drawing.Point(52, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "ID;";
-            // 
-            // profesorBindingSource
-            // 
-            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
             // 
             // fmModificarProfesor
             // 
@@ -123,6 +123,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fmModificarProfesor";
+            this.ShowIcon = false;
             this.Text = "Modificar Profesor";
             this.Load += new System.EventHandler(this.ModificarProfesor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();

@@ -50,6 +50,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(145, 20);
             this.textBox1.TabIndex = 17;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
             // 
             // label1
@@ -131,6 +132,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fmBajaProfesores";
+            this.ShowIcon = false;
             this.Text = "Eliminar Profesor";
             this.Load += new System.EventHandler(this.fmBajaProfesores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();

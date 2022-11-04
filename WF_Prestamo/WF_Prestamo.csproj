@@ -108,6 +108,18 @@
     <Compile Include="Forms\Ubicaciones\fmAltaUbicacion.Designer.cs">
       <DependentUpon>fmAltaUbicacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ubicaciones\fmBajaUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ubicaciones\fmBajaUbicacion.Designer.cs">
+      <DependentUpon>fmBajaUbicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ubicaciones\fmModificarUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ubicaciones\fmModificarUbicacion.Designer.cs">
+      <DependentUpon>fmModificarUbicacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ubicaciones\fmUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ubicaciones\fmAltaUbicacion.resx">
       <DependentUpon>fmAltaUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ubicaciones\fmBajaUbicacion.resx">
+      <DependentUpon>fmBajaUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ubicaciones\fmModificarUbicacion.resx">
+      <DependentUpon>fmModificarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ubicaciones\fmUbicacion.resx">
       <DependentUpon>fmUbicacion.cs</DependentUpon>

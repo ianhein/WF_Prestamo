@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WF_Prestamo.Entidades;
 using WF_Prestamo.Persistencia;
 
 namespace WF_Prestamo.Forms.Ubicaciones
@@ -33,6 +34,28 @@ namespace WF_Prestamo.Forms.Ubicaciones
             dataUbicacion.DataSource = ubicacionBindingSource;
             dataUbicacion.Refresh();
             //refresh data after insert 
+            ubicacionBindingSource.DataSource = pUbicacion.GetAll();
+        }
+
+        private void btnBajaUbicacion_Click(object sender, EventArgs e)
+        {
+            new fmBajaUbicacion(((Ubicacion)ubicacionBindingSource.Current)).ShowDialog();
+            Conexion.OpenConexion();
+            ubicacionBindingSource.DataSource = pUbicacion.GetAll();
+            Conexion.CloseConexion();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new fmModificarUbicacion((Ubicacion)ubicacionBindingSource.Current).ShowDialog();
+
+            Conexion.OpenConexion();
+            ubicacionBindingSource.DataSource = pProfesor.GetAll();
+        }
+
+        private void btnRefrescarUbicacion_Click(object sender, EventArgs e)
+        {
+            Conexion.OpenConexion();
             ubicacionBindingSource.DataSource = pUbicacion.GetAll();
         }
     }

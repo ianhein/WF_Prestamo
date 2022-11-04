@@ -54,5 +54,10 @@ namespace WF_Prestamo.Forms
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
