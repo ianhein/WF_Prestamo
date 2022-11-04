@@ -34,19 +34,19 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataProfesores = new System.Windows.Forms.DataGridView();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ModificarProfesor = new System.Windows.Forms.Button();
             this.BajaProfesor = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.btnAltaProfe = new System.Windows.Forms.Button();
             this.altaBajaModificacion = new System.Windows.Forms.GroupBox();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ubicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataProfesores)).BeginInit();
-            this.altaBajaModificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
+            this.altaBajaModificacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,6 +117,24 @@
             this.dataProfesores.TabIndex = 0;
             this.dataProfesores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataProfesores_CellContentClick);
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // profesorBindingSource
+            // 
+            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
+            // 
             // ModificarProfesor
             // 
             this.ModificarProfesor.Location = new System.Drawing.Point(6, 92);
@@ -172,24 +190,6 @@
             this.altaBajaModificacion.Text = "ABM";
             this.altaBajaModificacion.Enter += new System.EventHandler(this.altaBajaModificacion_Enter);
             // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // profesorBindingSource
-            // 
-            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
-            // 
             // ubicacionBindingSource
             // 
             this.ubicacionBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Ubicacion);
@@ -205,8 +205,8 @@
             this.Text = "Profesores";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataProfesores)).EndInit();
-            this.altaBajaModificacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
+            this.altaBajaModificacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).EndInit();
             this.ResumeLayout(false);
 

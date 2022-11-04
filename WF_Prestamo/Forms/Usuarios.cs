@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WF_Prestamo.Entidades;
 using WF_Prestamo.Persistencia;
 using WF_Prestamo.Forms;
+using WF_Prestamo.Forms.Ubicaciones;
 
 namespace WF_Prestamo.Forms
 {
@@ -75,6 +76,9 @@ namespace WF_Prestamo.Forms
 
         private void listarUbicacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Conexion.OpenConexion();
+            fmUbicacion u = new fmUbicacion();
+            u.ShowDialog();
         }
     }
 }
