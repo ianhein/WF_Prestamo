@@ -25,21 +25,32 @@ namespace WF_Prestamo.Forms.Ubicaciones
         {
             fmAltaUbicacion au = new fmAltaUbicacion();
             au.ShowDialog();
+            Conexion.OpenConexion();
+            ubicacionBindingSource.DataSource = pUbicacion.GetAll();
+            Conexion.CloseConexion();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            fmUbicacion p = (fmUbicacion)ubicacionBindingSource.Current;
+            //'Unable to cast object of type 'WF_Prestamo.Entidades.Ubicacion' to type 'WF_Prestamo.Forms.Ubicaciones.fmUbicacion'.'
+            Ubicacion u = (Ubicacion)ubicacionBindingSource.Current;
+            ubicacionBindingSource.DataSource = u;
+            ubicacionBindingSource.ResetBindings(false);
+            
+
+            /*fmUbicacion p = (fmUbicacion)ubicacionBindingSource.Current;
             dataUbicacion.Visible = false;
             dataUbicacion.DataSource = ubicacionBindingSource;
             dataUbicacion.Refresh();
             //refresh data after insert 
-            ubicacionBindingSource.DataSource = pUbicacion.GetAll();
+            ubicacionBindingSource.DataSource = pUbicacion.GetAll();*/
         }
 
         private void btnBajaUbicacion_Click(object sender, EventArgs e)
         {
-            new fmBajaUbicacion(((Ubicacion)ubicacionBindingSource.Current)).ShowDialog();
+            Ubicacion u = (Ubicacion)ubicacionBindingSource.Current;
+            fmBajaUbicacion mu = new fmBajaUbicacion(u);
+            mu.ShowDialog();
             Conexion.OpenConexion();
             ubicacionBindingSource.DataSource = pUbicacion.GetAll();
             Conexion.CloseConexion();
@@ -47,7 +58,12 @@ namespace WF_Prestamo.Forms.Ubicaciones
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new fmModificarUbicacion((Ubicacion)ubicacionBindingSource.Current).ShowDialog();
+            
+            Ubicacion u = (Ubicacion)ubicacionBindingSource.Current;
+            fmModificarUbicacion mu = new fmModificarUbicacion(u);
+            mu.ShowDialog();
+            // new fmModificarUbicacion(((Ubicacion)ubicacionBindingSource.Current)).ShowDialog();
+
 
             Conexion.OpenConexion();
             ubicacionBindingSource.DataSource = pProfesor.GetAll();

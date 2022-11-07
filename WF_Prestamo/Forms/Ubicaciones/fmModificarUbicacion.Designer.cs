@@ -32,14 +32,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ubicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.ubicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -68,6 +68,10 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(145, 20);
             this.textBox1.TabIndex = 13;
+            // 
+            // ubicacionBindingSource
+            // 
+            this.ubicacionBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Ubicacion);
             // 
             // profesorBindingSource
             // 
@@ -107,10 +111,6 @@
             this.textBox3.Size = new System.Drawing.Size(145, 20);
             this.textBox3.TabIndex = 17;
             // 
-            // ubicacionBindingSource
-            // 
-            this.ubicacionBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Ubicacion);
-            // 
             // fmModificarUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,8 +128,8 @@
             this.Name = "fmModificarUbicacion";
             this.ShowIcon = false;
             this.Text = "Modificar Ubicacion";
-            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

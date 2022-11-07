@@ -203,6 +203,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "fmProfesor";
             this.Text = "Profesores";
+            this.Load += new System.EventHandler(this.fmProfesor_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataProfesores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();

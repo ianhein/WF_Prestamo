@@ -49,6 +49,7 @@ namespace WF_Prestamo.Forms
             }
             if (profeNombreTxt.Text != "" && profeApellidoTxt.Text != "")
             {
+                Conexion.OpenConexion();
                 pProfesor.Save(p);
                 MessageBox.Show("Se ha registrado Correctamente!");            
             }

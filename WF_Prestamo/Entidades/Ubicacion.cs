@@ -11,8 +11,6 @@ namespace WF_Prestamo.Entidades
         int idUbicacion;
         string aula;
         string edificio;
-
-        
         public string Aula { get => aula; set => aula = value; }
         public string Edificio {get => edificio; set => edificio = value; }
         public int IdUbicacion { get => idUbicacion; set => idUbicacion = value; }
