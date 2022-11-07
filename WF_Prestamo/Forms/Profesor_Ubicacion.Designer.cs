@@ -1,6 +1,6 @@
 ﻿namespace WF_Prestamo.Forms
 {
-    partial class fmProfesor
+    partial class Profesor_Ubicacion
     {
         /// <summary>
         /// Required designer variable.
@@ -33,20 +33,24 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.dataProfesores = new System.Windows.Forms.DataGridView();
             this.ModificarProfesor = new System.Windows.Forms.Button();
             this.BajaProfesor = new System.Windows.Forms.Button();
             this.btnAltaProfe = new System.Windows.Forms.Button();
-            this.altaBajaModificacion = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.aulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ubicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataProfesores)).BeginInit();
-            this.altaBajaModificacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,11 +58,14 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.dataProfesores);
+            this.groupBox1.Controls.Add(this.ModificarProfesor);
+            this.groupBox1.Controls.Add(this.BajaProfesor);
+            this.groupBox1.Controls.Add(this.btnAltaProfe);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(252, 450);
+            this.groupBox1.Size = new System.Drawing.Size(553, 450);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profesor";
@@ -91,55 +98,27 @@
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // dataProfesores
-            // 
-            this.dataProfesores.AllowUserToAddRows = false;
-            this.dataProfesores.AllowUserToDeleteRows = false;
-            this.dataProfesores.AllowUserToResizeColumns = false;
-            this.dataProfesores.AllowUserToResizeRows = false;
-            this.dataProfesores.AutoGenerateColumns = false;
-            this.dataProfesores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dataProfesores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataProfesores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombreDataGridViewTextBoxColumn,
-            this.apellidoDataGridViewTextBoxColumn});
-            this.dataProfesores.DataSource = this.profesorBindingSource;
-            this.dataProfesores.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataProfesores.Location = new System.Drawing.Point(3, 16);
-            this.dataProfesores.Name = "dataProfesores";
-            this.dataProfesores.ReadOnly = true;
-            this.dataProfesores.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataProfesores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataProfesores.ShowCellErrors = false;
-            this.dataProfesores.ShowCellToolTips = false;
-            this.dataProfesores.ShowEditingIcon = false;
-            this.dataProfesores.Size = new System.Drawing.Size(244, 431);
-            this.dataProfesores.TabIndex = 0;
-            this.dataProfesores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataProfesores_CellContentClick);
-            // 
             // ModificarProfesor
             // 
-            this.ModificarProfesor.Location = new System.Drawing.Point(6, 92);
+            this.ModificarProfesor.Location = new System.Drawing.Point(256, 111);
             this.ModificarProfesor.Name = "ModificarProfesor";
             this.ModificarProfesor.Size = new System.Drawing.Size(107, 23);
             this.ModificarProfesor.TabIndex = 3;
-            this.ModificarProfesor.Text = "Modificar Profesor";
+            this.ModificarProfesor.Text = "ModificarProfesor";
             this.ModificarProfesor.UseVisualStyleBackColor = true;
-            this.ModificarProfesor.Click += new System.EventHandler(this.ModificarProfesor_Click);
             // 
             // BajaProfesor
             // 
-            this.BajaProfesor.Location = new System.Drawing.Point(6, 63);
+            this.BajaProfesor.Location = new System.Drawing.Point(256, 82);
             this.BajaProfesor.Name = "BajaProfesor";
             this.BajaProfesor.Size = new System.Drawing.Size(107, 23);
             this.BajaProfesor.TabIndex = 2;
             this.BajaProfesor.Text = "Eliminar Profesor";
             this.BajaProfesor.UseVisualStyleBackColor = true;
-            this.BajaProfesor.Click += new System.EventHandler(this.BajaProfesor_Click);
             // 
             // btnAltaProfe
             // 
-            this.btnAltaProfe.Location = new System.Drawing.Point(6, 34);
+            this.btnAltaProfe.Location = new System.Drawing.Point(256, 53);
             this.btnAltaProfe.Name = "btnAltaProfe";
             this.btnAltaProfe.Size = new System.Drawing.Size(107, 23);
             this.btnAltaProfe.TabIndex = 1;
@@ -147,57 +126,99 @@
             this.btnAltaProfe.UseVisualStyleBackColor = true;
             this.btnAltaProfe.Click += new System.EventHandler(this.btnAltaProfe_Click);
             // 
-            // altaBajaModificacion
+            // dataGridView1
             // 
-            this.altaBajaModificacion.Controls.Add(this.btnAltaProfe);
-            this.altaBajaModificacion.Controls.Add(this.ModificarProfesor);
-            this.altaBajaModificacion.Controls.Add(this.BajaProfesor);
-            this.altaBajaModificacion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.altaBajaModificacion.Location = new System.Drawing.Point(265, 0);
-            this.altaBajaModificacion.Name = "altaBajaModificacion";
-            this.altaBajaModificacion.Size = new System.Drawing.Size(197, 450);
-            this.altaBajaModificacion.TabIndex = 8;
-            this.altaBajaModificacion.TabStop = false;
-            this.altaBajaModificacion.Text = "ABM";
-            this.altaBajaModificacion.Enter += new System.EventHandler(this.altaBajaModificacion_Enter);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.nombreDataGridViewTextBoxColumn,
+            this.apellidoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.profesorBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 13);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(244, 425);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox2.Location = new System.Drawing.Point(560, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(240, 450);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ubicacion";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aulaDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.ubicacionBindingSource;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(234, 431);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // aulaDataGridViewTextBoxColumn
+            // 
+            this.aulaDataGridViewTextBoxColumn.DataPropertyName = "Aula";
+            this.aulaDataGridViewTextBoxColumn.Frozen = true;
+            this.aulaDataGridViewTextBoxColumn.HeaderText = "Aula";
+            this.aulaDataGridViewTextBoxColumn.Name = "aulaDataGridViewTextBoxColumn";
+            this.aulaDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // ubicacionBindingSource
+            // 
+            this.ubicacionBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Ubicacion);
+            // 
+            // profesorBindingSource
+            // 
+            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apellidoDataGridViewTextBoxColumn
             // 
             this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // profesorBindingSource
-            // 
-            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
-            // 
-            // ubicacionBindingSource
-            // 
-            this.ubicacionBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Ubicacion);
-            // 
-            // fmProfesor
+            // Profesor_Ubicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 450);
-            this.Controls.Add(this.altaBajaModificacion);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "fmProfesor";
-            this.Text = "Profesores";
-            this.Load += new System.EventHandler(this.fmProfesor_Load);
+            this.Name = "Profesor_Ubicacion";
+            this.Text = "Datos Principales";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataProfesores)).EndInit();
-            this.altaBajaModificacion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,17 +226,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource profesorBindingSource;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aulaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource ubicacionBindingSource;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataProfesores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button ModificarProfesor;
         private System.Windows.Forms.Button BajaProfesor;
         private System.Windows.Forms.Button btnAltaProfe;
-        private System.Windows.Forms.GroupBox altaBajaModificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
     }
 }

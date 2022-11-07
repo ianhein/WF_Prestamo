@@ -9,27 +9,28 @@ namespace WF_Prestamo.Entidades
     class Equipo
     {
         int idEquipo;
-        string nombre;
-        List<TipoEquipo> tipoEquipos;
+        string nombreEquipo;
+        TipoEquipo tipoEquipo;
 
-        public Equipo(int idEquipo, string nombre, List<TipoEquipo> tipoEquipos)
+        public Equipo(int idEquipo, string nombreEquipo, TipoEquipo tipoEquipo)
         {
             this.idEquipo = idEquipo;
-            this.nombre = nombre;
-            this.tipoEquipos = tipoEquipos;
-            
+            this.nombreEquipo = nombreEquipo;
+            this.tipoEquipo = tipoEquipo;
         }
+       
 
         public Equipo()
         {
             
         }
 
-        public string Nombre { get => nombre; set => nombre = value; }
+
+        public string NombreEquipo { get => nombreEquipo; set => nombreEquipo = value; }
 
         public int Id { get => idEquipo; set => idEquipo = value; }
 
-        internal List<TipoEquipo> TipoEquipos { get => tipoEquipos; set => tipoEquipos = value; }
+        public TipoEquipo TipoEquipo { get => tipoEquipo; set => tipoEquipo = value; }
 
         public override string ToString()
         {

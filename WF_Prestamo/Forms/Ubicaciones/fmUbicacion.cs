@@ -32,18 +32,7 @@ namespace WF_Prestamo.Forms.Ubicaciones
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //'Unable to cast object of type 'WF_Prestamo.Entidades.Ubicacion' to type 'WF_Prestamo.Forms.Ubicaciones.fmUbicacion'.'
-            Ubicacion u = (Ubicacion)ubicacionBindingSource.Current;
-            ubicacionBindingSource.DataSource = u;
-            ubicacionBindingSource.ResetBindings(false);
-            
-
-            /*fmUbicacion p = (fmUbicacion)ubicacionBindingSource.Current;
-            dataUbicacion.Visible = false;
-            dataUbicacion.DataSource = ubicacionBindingSource;
-            dataUbicacion.Refresh();
-            //refresh data after insert 
-            ubicacionBindingSource.DataSource = pUbicacion.GetAll();*/
+           
         }
 
         private void btnBajaUbicacion_Click(object sender, EventArgs e)
@@ -66,7 +55,7 @@ namespace WF_Prestamo.Forms.Ubicaciones
 
 
             Conexion.OpenConexion();
-            ubicacionBindingSource.DataSource = pProfesor.GetAll();
+            ubicacionBindingSource.DataSource = pUbicacion.GetAll();
         }
 
         private void btnRefrescarUbicacion_Click(object sender, EventArgs e)

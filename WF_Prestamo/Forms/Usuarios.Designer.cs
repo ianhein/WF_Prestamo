@@ -143,7 +143,7 @@
             // listarUbicacionesToolStripMenuItem
             // 
             this.listarUbicacionesToolStripMenuItem.Name = "listarUbicacionesToolStripMenuItem";
-            this.listarUbicacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarUbicacionesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.listarUbicacionesToolStripMenuItem.Text = "Listar Ubicaciones";
             this.listarUbicacionesToolStripMenuItem.Click += new System.EventHandler(this.listarUbicacionesToolStripMenuItem_Click);
             // 
@@ -158,8 +158,9 @@
             // listarEquiposToolStripMenuItem
             // 
             this.listarEquiposToolStripMenuItem.Name = "listarEquiposToolStripMenuItem";
-            this.listarEquiposToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.listarEquiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarEquiposToolStripMenuItem.Text = "Listar Equipos";
+            this.listarEquiposToolStripMenuItem.Click += new System.EventHandler(this.listarEquiposToolStripMenuItem_Click);
             // 
             // préstamosToolStripMenuItem
             // 

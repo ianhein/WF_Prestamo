@@ -72,11 +72,29 @@
     <Compile Include="Entidades\Profesor.cs" />
     <Compile Include="Entidades\TipoEquipo.cs" />
     <Compile Include="Entidades\Ubicacion.cs" />
+    <Compile Include="Forms\Equipos\fmAltaEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Equipos\fmAltaEquipo.Designer.cs">
+      <DependentUpon>fmAltaEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Equipos\fmBajaEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Equipos\fmBajaEquipo.Designer.cs">
+      <DependentUpon>fmBajaEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Equipos\fmEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Equipos\fmEquipo.Designer.cs">
       <DependentUpon>fmEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Equipos\fmModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Equipos\fmModificar.Designer.cs">
+      <DependentUpon>fmModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Profesores\AltaProfesor.cs">
       <SubType>Form</SubType>
@@ -143,10 +161,14 @@
     <Compile Include="Persistencia\pEquipo.cs" />
     <Compile Include="Persistencia\pPrestamo.cs" />
     <Compile Include="Persistencia\pProfesor.cs" />
+    <Compile Include="Persistencia\pTipoEquipo.cs" />
     <Compile Include="Persistencia\pUbicacion.cs" />
     <Compile Include="Persistencia\pUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Equipos\fmAltaEquipo.resx">
+      <DependentUpon>fmAltaEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Equipos\fmEquipo.resx">
       <DependentUpon>fmEquipo.cs</DependentUpon>
     </EmbeddedResource>

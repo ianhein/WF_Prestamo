@@ -26,5 +26,10 @@ namespace WF_Prestamo.Entidades
         {
         }
 
+        public override string ToString()
+        {
+            return estado;
+        }
+
     }
 }

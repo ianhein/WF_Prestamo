@@ -14,10 +14,11 @@ namespace WF_Prestamo.Entidades
         DateTime horaInicio;
         DateTime horaFin;
         string estadoPrestamo;
-        List<Equipo> equipos;
-        List<Profesor> profesores;
-        List<TipoEquipo> tipoEquipos;
-        List<Ubicacion> ubicaciones;
+        Equipo Equipo;
+        Profesor Profesor;
+        Ubicacion Ubicacion;
+        TipoEquipo TipoEquipo;
+        
 
         public Prestamo(int idPrestamo, string fechaPrestamo, DateTime horaInicio, DateTime horaFin, string nombreProfesor, string estadoPrestamo, DateTime fechaCancelacion)
         {
@@ -31,10 +32,10 @@ namespace WF_Prestamo.Entidades
 
         public Prestamo()
         {
-            equipos = new List<Equipo>();
-            profesores = new List<Profesor>();
-            tipoEquipos = new List<TipoEquipo>();
-            ubicaciones = new List<Ubicacion>();
+            Equipo = new Equipo();
+            Profesor = new Profesor();
+            Ubicacion = new Ubicacion();
+            TipoEquipo = new TipoEquipo();
         }
 
         public int IdPrestamo { get => idPrestamo; set => idPrestamo = value; }
@@ -43,11 +44,12 @@ namespace WF_Prestamo.Entidades
         public DateTime HoraFin { get => horaFin; set => horaFin = value; }
         public DateTime FechaCancelacion { get => fechaCancelacion; set => fechaCancelacion = value; }
         public string EstadoPrestamo { get => estadoPrestamo; set => estadoPrestamo = value; }
-        internal List<Equipo> Equipos { get => equipos; set => equipos = value; }
-        internal List<Profesor> Profesores { get => profesores; set => profesores = value; }
-        internal List<TipoEquipo> TipoEquipos { get => tipoEquipos; set => tipoEquipos = value; }
-        internal List<Ubicacion> Ubicaciones { get => ubicaciones; set => ubicaciones = value; }
+        internal Equipo EquipoPrestamo { get => Equipo; set => Equipo = value; }
+        internal Profesor ProfesorPrestamo { get => Profesor; set => Profesor = value; }
+        internal Ubicacion UbiacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
+        internal TipoEquipo TipoEquipoPrestamo { get => TipoEquipo; set => TipoEquipo = value; }
         
-        
+
+
     }
 }

@@ -15,7 +15,7 @@ namespace WF_Prestamo.Persistencia
             //Creo script SQL a utilizar
             SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Equipo (Nombre) Value(@Nombre)");
             //Cargo parametros
-            cmd.Parameters.Add(new SQLiteParameter("@Nombre", e.Nombre));
+            cmd.Parameters.Add(new SQLiteParameter("@Nombre", e.NombreEquipo));
             //asigno conexion
             cmd.Connection = Conexion.Connection;
             cmd.ExecuteNonQuery();
@@ -26,7 +26,7 @@ namespace WF_Prestamo.Persistencia
             //Creo script SQL a utilizar
             SQLiteCommand cmd = new SQLiteCommand("UPDATE Ubicacion  SET NombreEquipo= @Nombre, idEquipo= @idEquipo WHERE idEquipo= @idEquipo;");
             //Cargo parametros
-            cmd.Parameters.Add(new SQLiteParameter("@Nombre", e.Nombre));
+            cmd.Parameters.Add(new SQLiteParameter("@Nombre", e.NombreEquipo));
             cmd.Parameters.Add(new SQLiteParameter("@idEquipo", e.Id));
             //asigno conexion
             cmd.Connection = Conexion.Connection;
@@ -52,7 +52,7 @@ namespace WF_Prestamo.Persistencia
         {
 
             TipoEquipo p = new TipoEquipo();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT id,  Nombre FROM TipoEquipo WHERE id = @id");
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idTipoEquipo,  Estado FROM TipoEquipo WHERE idTipoEquipo = @id");
             cmd.Parameters.Add(new SQLiteParameter("@id", id));
             cmd.Connection = Conexion.Connection;
             //creo el datareader
@@ -70,19 +70,22 @@ namespace WF_Prestamo.Persistencia
 
             return p;
         }
-
+            
         public static List<Equipo> GetAll()
         {
             List<Equipo> equipos = new List<Equipo>();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT idEquipo, Nombre FROM Equipo");
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idEquipo, idTipoEquipo, NombreEquipo FROM Equipo");
             // creo el detareader 
+            cmd.Connection = Conexion.Connection;
             SQLiteDataReader reader = cmd.ExecuteReader();
             // recorro el datareader 
             while (reader.Read())
             {
                 Equipo e = new Equipo();
                 e.Id = reader.GetInt32(0);
-                e.Nombre = reader.GetString(1);
+                e.TipoEquipo = GetById(reader.GetInt32(1));
+                e.NombreEquipo = reader.GetString(2);
+                equipos.Add(e);
                 //e.TipoEquipos = ;
             }
             return equipos;

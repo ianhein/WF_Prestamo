@@ -32,7 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataUbicacion = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnRefrescarUbicacion = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnBajaUbicacion = new System.Windows.Forms.Button();
             this.btnAltaUbicacion = new System.Windows.Forms.Button();
@@ -74,6 +73,7 @@
             this.dataUbicacion.Name = "dataUbicacion";
             this.dataUbicacion.ReadOnly = true;
             this.dataUbicacion.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataUbicacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataUbicacion.ShowCellErrors = false;
             this.dataUbicacion.ShowCellToolTips = false;
             this.dataUbicacion.ShowEditingIcon = false;
@@ -83,7 +83,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnRefrescarUbicacion);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.btnBajaUbicacion);
             this.groupBox2.Controls.Add(this.btnAltaUbicacion);
@@ -93,17 +92,7 @@
             this.groupBox2.Size = new System.Drawing.Size(197, 450);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "AMB";
-            // 
-            // btnRefrescarUbicacion
-            // 
-            this.btnRefrescarUbicacion.Location = new System.Drawing.Point(6, 106);
-            this.btnRefrescarUbicacion.Name = "btnRefrescarUbicacion";
-            this.btnRefrescarUbicacion.Size = new System.Drawing.Size(113, 23);
-            this.btnRefrescarUbicacion.TabIndex = 3;
-            this.btnRefrescarUbicacion.Text = "Refrescar";
-            this.btnRefrescarUbicacion.UseVisualStyleBackColor = true;
-            this.btnRefrescarUbicacion.Click += new System.EventHandler(this.btnRefrescarUbicacion_Click);
+            this.groupBox2.Text = "ABM";
             // 
             // button3
             // 
@@ -176,7 +165,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataUbicacion;
         private System.Windows.Forms.BindingSource ubicacionBindingSource;
-        private System.Windows.Forms.Button btnRefrescarUbicacion;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnBajaUbicacion;
         private System.Windows.Forms.Button btnAltaUbicacion;

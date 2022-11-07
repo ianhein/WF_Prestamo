@@ -11,6 +11,7 @@ using WF_Prestamo.Entidades;
 using WF_Prestamo.Persistencia;
 using WF_Prestamo.Forms;
 using WF_Prestamo.Forms.Ubicaciones;
+using WF_Prestamo.Forms.Equipos;
 
 namespace WF_Prestamo.Forms
 {
@@ -78,6 +79,13 @@ namespace WF_Prestamo.Forms
         {
             Conexion.OpenConexion();
             fmUbicacion u = new fmUbicacion();
+            u.ShowDialog();
+        }
+
+        private void listarEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Conexion.OpenConexion();
+            fmEquipo u = new fmEquipo();
             u.ShowDialog();
         }
     }
