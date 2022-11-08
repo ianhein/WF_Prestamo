@@ -126,6 +126,30 @@
     <Compile Include="Forms\Profesores\fmProfesor.Designer.cs">
       <DependentUpon>fmProfesor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Préstamos\fmAltaPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Préstamos\fmAltaPrestamo.Designer.cs">
+      <DependentUpon>fmAltaPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Préstamos\fmBajaPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Préstamos\fmBajaPrestamo.Designer.cs">
+      <DependentUpon>fmBajaPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Préstamos\fmModificarPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Préstamos\fmModificarPrestamo.Designer.cs">
+      <DependentUpon>fmModificarPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Préstamos\fmPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Préstamos\fmPrestamo.Designer.cs">
+      <DependentUpon>fmPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ubicaciones\fmAltaUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>

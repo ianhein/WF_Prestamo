@@ -88,5 +88,11 @@ namespace WF_Prestamo.Forms
             fmEquipo u = new fmEquipo();
             u.ShowDialog();
         }
+
+        private void listarPréstamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Conexion.OpenConexion();
+            fmPrestamo
+        }
     }
 }
