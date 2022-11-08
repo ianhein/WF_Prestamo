@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WF_Prestamo.Entidades;
+using WF_Prestamo.Persistencia;
 
 namespace WF_Prestamo.Persistencia
 {
@@ -16,7 +17,7 @@ namespace WF_Prestamo.Persistencia
             //Cargo parametros
             cmd.Parameters.Add(new SQLiteParameter("@idEquipo", p.EquipoPrestamo.Id));
             cmd.Parameters.Add(new SQLiteParameter("@idUbicacion", p.UbicacionPrestamo.IdUbicacion));
-            cmd.Parameters.Add(new SQLiteParameter("@idUsuario", p.Usu));
+            cmd.Parameters.Add(new SQLiteParameter("@idUsuario", p.UsuarioPrestamo.IdUsuario));
             cmd.Parameters.Add(new SQLiteParameter("@idProfesor", p.IdProfesor));
             cmd.Parameters.Add(new SQLiteParameter("@Duracion", p.));
             cmd.Parameters.Add(new SQLiteParameter("@FechaPrestamo", p.FechaPrestamo));

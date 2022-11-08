@@ -8,6 +8,7 @@ namespace WF_Prestamo.Entidades
 {
     class Usuario
     {
+        int
         string user;
         string password;
         public Usuario() { }
