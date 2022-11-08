@@ -63,9 +63,8 @@
             // 
             this.dataEquipo.AllowUserToAddRows = false;
             this.dataEquipo.AllowUserToDeleteRows = false;
-            this.dataEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataEquipo.AutoGenerateColumns = false;
             this.dataEquipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataEquipo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -111,6 +110,7 @@
             this.btnBajaEquipo.TabIndex = 1;
             this.btnBajaEquipo.Text = "Eliminar Equipo";
             this.btnBajaEquipo.UseVisualStyleBackColor = true;
+            this.btnBajaEquipo.Click += new System.EventHandler(this.btnBajaEquipo_Click);
             // 
             // btnAltaEquipo
             // 

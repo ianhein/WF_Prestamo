@@ -169,6 +169,9 @@
     <EmbeddedResource Include="Forms\Equipos\fmAltaEquipo.resx">
       <DependentUpon>fmAltaEquipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Equipos\fmBajaEquipo.resx">
+      <DependentUpon>fmBajaEquipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Equipos\fmEquipo.resx">
       <DependentUpon>fmEquipo.cs</DependentUpon>
     </EmbeddedResource>

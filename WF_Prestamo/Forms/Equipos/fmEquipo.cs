@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using WF_Prestamo.Persistencia;
+using WF_Prestamo.Entidades;
 
 namespace WF_Prestamo.Forms.Equipos
 {
@@ -18,7 +19,6 @@ namespace WF_Prestamo.Forms.Equipos
             fmA.ShowDialog();
             Conexion.OpenConexion();
             equipoBindingSource.DataSource = pEquipo.GetAll();
-            Conexion.CloseConexion();
         }
 
         private void fmEquipo_Load(object sender, EventArgs e)
@@ -34,6 +34,13 @@ namespace WF_Prestamo.Forms.Equipos
 
         }
 
-       
+        private void btnBajaEquipo_Click(object sender, EventArgs e)
+        {
+            new fmBajaEquipo((Equipo)equipoBindingSource.Current).ShowDialog();
+            Conexion.OpenConexion();
+            equipoBindingSource.DataSource = pEquipo.GetAll();
+            
+
+        }
     }
 }

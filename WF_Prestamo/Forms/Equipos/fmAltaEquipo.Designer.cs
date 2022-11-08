@@ -50,15 +50,15 @@
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(74, 40);
+            this.btnAlta.Location = new System.Drawing.Point(88, 40);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(145, 20);
+            this.btnAlta.Size = new System.Drawing.Size(131, 20);
             this.btnAlta.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 43);
+            this.label1.Location = new System.Drawing.Point(35, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 7;
@@ -69,9 +69,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(0, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Tipo de Equipo:";
+            this.label2.Text = "Estado de Equipo:";
             // 
             // comboBox1
             // 

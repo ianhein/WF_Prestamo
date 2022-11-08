@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WF_Prestamo.Entidades
 {
-    internal class TipoEquipo
+    public class TipoEquipo
     {
         int id;
         string estado;

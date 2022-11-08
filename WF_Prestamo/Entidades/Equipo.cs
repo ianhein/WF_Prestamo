@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WF_Prestamo.Entidades
 {
-    class Equipo
+    public class Equipo
     {
         int idEquipo;
         string nombreEquipo;
@@ -18,7 +18,7 @@ namespace WF_Prestamo.Entidades
             this.nombreEquipo = nombreEquipo;
             this.tipoEquipo = tipoEquipo;
         }
-       
+
 
         public Equipo()
         {
@@ -31,6 +31,7 @@ namespace WF_Prestamo.Entidades
         public int Id { get => idEquipo; set => idEquipo = value; }
 
         public TipoEquipo TipoEquipo { get => tipoEquipo; set => tipoEquipo = value; }
+
 
         public override string ToString()
         {

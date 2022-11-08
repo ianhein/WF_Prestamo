@@ -26,5 +26,20 @@ namespace WF_Prestamo.Persistencia
             }
             return tipoEquipos;
         }
+
+        public static TipoEquipo GetById(int id)
+        {
+            TipoEquipo tipoEquipo = new TipoEquipo();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idTipoEquipo, Estado FROM TipoEquipo WHERE idTipoEquipo = @id");
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Connection = Conexion.Connection;
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                tipoEquipo.Id = reader.GetInt32(0);
+                tipoEquipo.Estado = reader.GetString(1);
+            }
+            return tipoEquipo;
+        }
     }
 }

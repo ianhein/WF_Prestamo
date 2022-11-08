@@ -70,7 +70,30 @@ namespace WF_Prestamo.Persistencia
 
             return p;
         }
-            
+
+        public static TipoEquipo GetTipoEquipoById(int id)
+        {
+
+            TipoEquipo p = new TipoEquipo();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idTipoEquipo,  Estado FROM TipoEquipo WHERE idTipoEquipo = @id");
+            cmd.Parameters.Add(new SQLiteParameter("@id", id));
+            cmd.Connection = Conexion.Connection;
+            //creo el datareader
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            //Recorro el datareader
+            while (reader.Read())
+            {
+
+                p.Id = reader.GetInt32(0);
+                p.Estado = reader.GetString(1);
+
+
+            }
+
+
+            return p;
+        }
+
         public static List<Equipo> GetAll()
         {
             List<Equipo> equipos = new List<Equipo>();

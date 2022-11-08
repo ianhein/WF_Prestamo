@@ -20,7 +20,8 @@ namespace WF_Prestamo.Forms
             InitializeComponent();
             Conexion.OpenConexion();
             profesorBindingSource.Add(pProfesor.GetById(id));
-            Conexion.CloseConexion();
+            
+
         }
 
         public fmBajaProfesores(Profesor p)
@@ -32,7 +33,6 @@ namespace WF_Prestamo.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //alert if the user is sure to delete the record
             DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
