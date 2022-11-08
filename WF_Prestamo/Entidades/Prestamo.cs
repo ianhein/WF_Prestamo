@@ -13,6 +13,7 @@ namespace WF_Prestamo.Entidades
         DateTime fechaCancelacion;
         DateTime horaInicio;
         DateTime horaFin;
+        string Duracion;
         string estadoPrestamo;
         Equipo Equipo;
         Profesor Profesor;
@@ -31,13 +32,14 @@ namespace WF_Prestamo.Entidades
             Usuario = new Usuario();
         }
 
-        public Prestamo(int idPrestamo, string fechaPrestamo, DateTime fechaCancelacion, DateTime horaInicio, DateTime horaFin, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, TipoEquipo tipoEquipo, Usuario usuario)
+        public Prestamo(int idPrestamo, string fechaPrestamo, DateTime fechaCancelacion, DateTime horaInicio, DateTime horaFin, string Duracion, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, TipoEquipo tipoEquipo, Usuario usuario)
         {
             this.idPrestamo = idPrestamo;
             this.fechaPrestamo = fechaPrestamo;
             this.fechaCancelacion = fechaCancelacion;
             this.horaInicio = horaInicio;
             this.horaFin = horaFin;
+            this.Duracion = Duracion;
             this.estadoPrestamo = estadoPrestamo;
             Equipo = equipo;
             Profesor = profesor;
@@ -57,7 +59,7 @@ namespace WF_Prestamo.Entidades
         internal Ubicacion UbicacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
         internal TipoEquipo TipoEquipoPrestamo { get => TipoEquipo; set => TipoEquipo = value; }
         internal Usuario UsuarioPrestamo { get => Usuario; set => Usuario = value; }
-        
+        internal string duracion { get => Duracion; set => Duracion = value; }
 
 
     }

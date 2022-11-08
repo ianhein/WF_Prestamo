@@ -8,12 +8,12 @@ namespace WF_Prestamo.Entidades
 {
     class Usuario
     {
-        int
+        int idUsuario;
         string user;
         string password;
         public Usuario() { }
 
-        public Usuario(string user,string password)
+        public Usuario(string user,string password )
         {
             this.user = user;
             this.password = password;
@@ -23,6 +23,7 @@ namespace WF_Prestamo.Entidades
 
         public string Password { get => password; set => password = value; }
 
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
 
 
     }
