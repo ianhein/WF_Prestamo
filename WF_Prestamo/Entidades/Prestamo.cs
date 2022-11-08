@@ -13,22 +13,15 @@ namespace WF_Prestamo.Entidades
         DateTime fechaCancelacion;
         DateTime horaInicio;
         DateTime horaFin;
+        string Duracion;
         string estadoPrestamo;
         Equipo Equipo;
         Profesor Profesor;
         Ubicacion Ubicacion;
         TipoEquipo TipoEquipo;
-        
+        Usuario Usuario;
 
-        public Prestamo(int idPrestamo, string fechaPrestamo, DateTime horaInicio, DateTime horaFin, string nombreProfesor, string estadoPrestamo, DateTime fechaCancelacion)
-        {
-            this.idPrestamo = idPrestamo;
-            this.fechaPrestamo = fechaPrestamo;
-            this.horaInicio = horaInicio;
-            this.horaFin = horaFin;
-            this.estadoPrestamo = estadoPrestamo;
-            this.fechaCancelacion = fechaCancelacion;
-        }
+
 
         public Prestamo()
         {
@@ -36,6 +29,23 @@ namespace WF_Prestamo.Entidades
             Profesor = new Profesor();
             Ubicacion = new Ubicacion();
             TipoEquipo = new TipoEquipo();
+            Usuario = new Usuario();
+        }
+
+        public Prestamo(int idPrestamo, string fechaPrestamo, DateTime fechaCancelacion, DateTime horaInicio, DateTime horaFin, string Duracion, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, TipoEquipo tipoEquipo, Usuario usuario)
+        {
+            this.idPrestamo = idPrestamo;
+            this.fechaPrestamo = fechaPrestamo;
+            this.fechaCancelacion = fechaCancelacion;
+            this.horaInicio = horaInicio;
+            this.horaFin = horaFin;
+            this.Duracion = Duracion;
+            this.estadoPrestamo = estadoPrestamo;
+            Equipo = equipo;
+            Profesor = profesor;
+            Ubicacion = ubicacion;
+            TipoEquipo = tipoEquipo;
+            Usuario = usuario;
         }
 
         public int IdPrestamo { get => idPrestamo; set => idPrestamo = value; }
@@ -46,9 +56,10 @@ namespace WF_Prestamo.Entidades
         public string EstadoPrestamo { get => estadoPrestamo; set => estadoPrestamo = value; }
         internal Equipo EquipoPrestamo { get => Equipo; set => Equipo = value; }
         internal Profesor ProfesorPrestamo { get => Profesor; set => Profesor = value; }
-        internal Ubicacion UbiacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
+        internal Ubicacion UbicacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
         internal TipoEquipo TipoEquipoPrestamo { get => TipoEquipo; set => TipoEquipo = value; }
-        
+        internal Usuario UsuarioPrestamo { get => Usuario; set => Usuario = value; }
+        internal string duracion { get => Duracion; set => Duracion = value; }
 
 
     }

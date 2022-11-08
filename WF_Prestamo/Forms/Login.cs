@@ -102,5 +102,10 @@ namespace WF_Prestamo
             SystemSounds.Asterisk.Play();
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

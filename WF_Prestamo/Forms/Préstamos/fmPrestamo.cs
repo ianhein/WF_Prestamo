@@ -16,5 +16,10 @@ namespace WF_Prestamo.Forms.Préstamos
         {
             InitializeComponent();
         }
+
+        private void dataPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
