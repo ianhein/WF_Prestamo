@@ -20,15 +20,7 @@ namespace WF_Prestamo.Entidades
         TipoEquipo TipoEquipo;
         
 
-        public Prestamo(int idPrestamo, string fechaPrestamo, DateTime horaInicio, DateTime horaFin, string nombreProfesor, string estadoPrestamo, DateTime fechaCancelacion)
-        {
-            this.idPrestamo = idPrestamo;
-            this.fechaPrestamo = fechaPrestamo;
-            this.horaInicio = horaInicio;
-            this.horaFin = horaFin;
-            this.estadoPrestamo = estadoPrestamo;
-            this.fechaCancelacion = fechaCancelacion;
-        }
+       
 
         public Prestamo()
         {
@@ -36,6 +28,20 @@ namespace WF_Prestamo.Entidades
             Profesor = new Profesor();
             Ubicacion = new Ubicacion();
             TipoEquipo = new TipoEquipo();
+        }
+
+        public Prestamo(int idPrestamo, string fechaPrestamo, DateTime fechaCancelacion, DateTime horaInicio, DateTime horaFin, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, TipoEquipo tipoEquipo)
+        {
+            this.idPrestamo = idPrestamo;
+            this.fechaPrestamo = fechaPrestamo;
+            this.fechaCancelacion = fechaCancelacion;
+            this.horaInicio = horaInicio;
+            this.horaFin = horaFin;
+            this.estadoPrestamo = estadoPrestamo;
+            Equipo = equipo;
+            Profesor = profesor;
+            Ubicacion = ubicacion;
+            TipoEquipo = tipoEquipo;
         }
 
         public int IdPrestamo { get => idPrestamo; set => idPrestamo = value; }
@@ -46,7 +52,7 @@ namespace WF_Prestamo.Entidades
         public string EstadoPrestamo { get => estadoPrestamo; set => estadoPrestamo = value; }
         internal Equipo EquipoPrestamo { get => Equipo; set => Equipo = value; }
         internal Profesor ProfesorPrestamo { get => Profesor; set => Profesor = value; }
-        internal Ubicacion UbiacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
+        internal Ubicacion UbicacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
         internal TipoEquipo TipoEquipoPrestamo { get => TipoEquipo; set => TipoEquipo = value; }
         
 
