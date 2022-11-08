@@ -12,6 +12,7 @@ using WF_Prestamo.Persistencia;
 using WF_Prestamo.Forms;
 using WF_Prestamo.Forms.Ubicaciones;
 using WF_Prestamo.Forms.Equipos;
+using WF_Prestamo.Forms.Préstamos;
 
 namespace WF_Prestamo.Forms
 {
@@ -87,6 +88,13 @@ namespace WF_Prestamo.Forms
             Conexion.OpenConexion();
             fmEquipo u = new fmEquipo();
             u.ShowDialog();
+        }
+
+        private void listarPréstamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Conexion.OpenConexion();
+            fmPrestamo p = new fmPrestamo();
+            p.ShowDialog();
         }
     }
 }

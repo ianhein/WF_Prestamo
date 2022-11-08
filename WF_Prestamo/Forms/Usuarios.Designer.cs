@@ -158,7 +158,7 @@
             // listarEquiposToolStripMenuItem
             // 
             this.listarEquiposToolStripMenuItem.Name = "listarEquiposToolStripMenuItem";
-            this.listarEquiposToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarEquiposToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.listarEquiposToolStripMenuItem.Text = "Listar Equipos";
             this.listarEquiposToolStripMenuItem.Click += new System.EventHandler(this.listarEquiposToolStripMenuItem_Click);
             // 
@@ -173,8 +173,9 @@
             // listarPréstamosToolStripMenuItem
             // 
             this.listarPréstamosToolStripMenuItem.Name = "listarPréstamosToolStripMenuItem";
-            this.listarPréstamosToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.listarPréstamosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listarPréstamosToolStripMenuItem.Text = "Listar Préstamos";
+            this.listarPréstamosToolStripMenuItem.Click += new System.EventHandler(this.listarPréstamosToolStripMenuItem_Click);
             // 
             // Usuarios
             // 

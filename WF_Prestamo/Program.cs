@@ -11,8 +11,8 @@ namespace WF_Prestamo
     internal static class Program
     {
         public static string user;
-        
-        /// <summary>
+        ///conmas
+        /// <summary>s
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
