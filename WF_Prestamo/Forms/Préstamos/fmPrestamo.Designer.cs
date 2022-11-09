@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataPrestamos = new System.Windows.Forms.DataGridView();
-            this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCancelacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
@@ -80,10 +80,6 @@
             this.dataPrestamos.TabIndex = 0;
             this.dataPrestamos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPrestamos_CellContentClick);
             // 
-            // prestamoBindingSource
-            // 
-            this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
-            // 
             // fechaPrestamoDataGridViewTextBoxColumn
             // 
             this.fechaPrestamoDataGridViewTextBoxColumn.DataPropertyName = "FechaPrestamo";
@@ -119,6 +115,10 @@
             this.estadoPrestamoDataGridViewTextBoxColumn.Name = "estadoPrestamoDataGridViewTextBoxColumn";
             this.estadoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // prestamoBindingSource
+            // 
+            this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button3);
@@ -132,14 +132,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ABM";
             // 
-            // button1
+            // button3
             // 
-            this.button1.Location = new System.Drawing.Point(23, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar Préstamo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(23, 90);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Elimiar Préstamo";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -150,14 +150,15 @@
             this.button2.Text = "Modificar Préstamo";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button1
             // 
-            this.button3.Location = new System.Drawing.Point(23, 90);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Elimiar Préstamo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(23, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Agregar Préstamo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fmPrestamo
             // 

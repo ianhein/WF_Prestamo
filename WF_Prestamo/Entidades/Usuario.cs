@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WF_Prestamo.Entidades
 {
-    class Usuario
+    public class Usuario
     {
         int idUsuario;
         string user;

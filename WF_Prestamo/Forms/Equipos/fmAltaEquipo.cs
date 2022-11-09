@@ -41,6 +41,7 @@ namespace WF_Prestamo.Forms.Equipos
         {
             Equipo e = new Entidades.Equipo();
             e.NombreEquipo = btnAlta.Text;
+            e.CantidadEquipo = txtCantidad.Text;
 
             foreach (Equipo eq in pEquipo.GetAll())
             {
@@ -50,7 +51,7 @@ namespace WF_Prestamo.Forms.Equipos
                     return;
                 }
             }
-            if (btnAlta.Text != "")
+            if (btnAlta.Text != "" && txtCantidad.Text !="")
             {
                 Conexion.OpenConexion();
                 pEquipo.Save(e);
@@ -62,6 +63,21 @@ namespace WF_Prestamo.Forms.Equipos
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+
+        }
+
+        private void btnAlta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

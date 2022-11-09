@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tipoEquipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tipoEquipoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,15 +52,16 @@
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(88, 40);
+            this.btnAlta.Location = new System.Drawing.Point(88, 21);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(131, 20);
             this.btnAlta.TabIndex = 5;
+            this.btnAlta.TextChanged += new System.EventHandler(this.btnAlta_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 43);
+            this.label1.Location = new System.Drawing.Point(35, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 7;
@@ -67,18 +70,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 79);
+            this.label2.Location = new System.Drawing.Point(0, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Estado de Equipo:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.tipoEquipoBindingSource;
             this.comboBox1.DisplayMember = "Estado";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 76);
+            this.comboBox1.Location = new System.Drawing.Point(88, 47);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(131, 21);
             this.comboBox1.TabIndex = 10;
@@ -89,11 +93,30 @@
             // 
             this.tipoEquipoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.TipoEquipo);
             // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(88, 74);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(131, 20);
+            this.txtCantidad.TabIndex = 11;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Cantidad:";
+            // 
             // fmAltaEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 141);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -118,5 +141,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource tipoEquipoBindingSource;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label3;
     }
 }

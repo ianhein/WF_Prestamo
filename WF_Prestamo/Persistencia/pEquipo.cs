@@ -13,9 +13,10 @@ namespace WF_Prestamo.Persistencia
         public static void Save(Equipo e)
         {
             //Creo script SQL a utilizar
-            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Equipo (Nombre) Value(@Nombre)");
+            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Equipo (NombreEquipo, Cantidad) VALUES (@Nombre, @Cantidad)");
             //Cargo parametros
             cmd.Parameters.Add(new SQLiteParameter("@Nombre", e.NombreEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@Cantidad", e.CantidadEquipo));
             //asigno conexion
             cmd.Connection = Conexion.Connection;
             cmd.ExecuteNonQuery();
@@ -27,6 +28,7 @@ namespace WF_Prestamo.Persistencia
             SQLiteCommand cmd = new SQLiteCommand("UPDATE Ubicacion  SET NombreEquipo= @Nombre, idEquipo= @idEquipo WHERE idEquipo= @idEquipo;");
             //Cargo parametros
             cmd.Parameters.Add(new SQLiteParameter("@Nombre", e.NombreEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@Cantidad", e.CantidadEquipo));
             cmd.Parameters.Add(new SQLiteParameter("@idEquipo", e.Id));
             //asigno conexion
             cmd.Connection = Conexion.Connection;
@@ -48,11 +50,11 @@ namespace WF_Prestamo.Persistencia
         {
             List<TipoEquipo> TipoEquipo = new List
         }*/
-        public static TipoEquipo GetById(int id)
+        public static Equipo GetById(int id)
         {
 
-            TipoEquipo p = new TipoEquipo();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT idTipoEquipo,  Estado FROM TipoEquipo WHERE idTipoEquipo = @id");
+            Equipo e = new Equipo();    
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idEquipo, idTipoEquipo, NombreEquipo, Cantidad FROM Equipo WHERE idEquipo= @id");
             cmd.Parameters.Add(new SQLiteParameter("@id", id));
             cmd.Connection = Conexion.Connection;
             //creo el datareader
@@ -61,21 +63,21 @@ namespace WF_Prestamo.Persistencia
             while (reader.Read())
             {
 
-                p.Id = reader.GetInt32(0);
-                p.Estado = reader.GetString(1);
-
-
+                e.Id = reader.GetInt32(0);
+                e.TipoEquipo = pTipoEquipo.GetById(reader.GetInt32(1));
+                e.NombreEquipo = reader.GetString(2);
+                e.CantidadEquipo = reader.GetString(3);
             }
 
-
-            return p;
+            
+            return e;
         }
 
         public static TipoEquipo GetTipoEquipoById(int id)
         {
 
             TipoEquipo p = new TipoEquipo();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT idTipoEquipo,  Estado FROM TipoEquipo WHERE idTipoEquipo = @id");
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idTipoEquipo, Estado FROM TipoEquipo WHERE idTipoEquipo = @id");
             cmd.Parameters.Add(new SQLiteParameter("@id", id));
             cmd.Connection = Conexion.Connection;
             //creo el datareader
@@ -97,7 +99,7 @@ namespace WF_Prestamo.Persistencia
         public static List<Equipo> GetAll()
         {
             List<Equipo> equipos = new List<Equipo>();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT idEquipo, idTipoEquipo, NombreEquipo FROM Equipo");
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idEquipo, idTipoEquipo, NombreEquipo, Cantidad FROM Equipo");
             // creo el detareader 
             cmd.Connection = Conexion.Connection;
             SQLiteDataReader reader = cmd.ExecuteReader();
@@ -106,8 +108,9 @@ namespace WF_Prestamo.Persistencia
             {
                 Equipo e = new Equipo();
                 e.Id = reader.GetInt32(0);
-                e.TipoEquipo = GetById(reader.GetInt32(1));
+                e.TipoEquipo = GetTipoEquipoById(reader.GetInt32(1));
                 e.NombreEquipo = reader.GetString(2);
+                e.CantidadEquipo = reader.GetString(3);
                 equipos.Add(e);
                 //e.TipoEquipos = ;
             }

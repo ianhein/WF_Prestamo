@@ -13,13 +13,12 @@ namespace WF_Prestamo.Persistencia
     {
         public static void Save(Prestamo p)
         {
-            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Prestamo (idEquipo, idUbicacion, idUsuario, idProfesor,Duracion,FechaPrestamo, EstadoPrestamo,HoraInicio,HoraFin) VALUES (@idEquipo, @idUbicacion, @idUsuario, @idProfesor,@Duracion,@FechaPrestamo,@EstadoPrestamo,@HoraInicio,@HoraFin);");
+            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Prestamo (idEquipo, idUbicacion, idUsuario, idProfesor,Duracion,FechaPrestamo, EstadoPrestamo,HoraInicio,HoraFin) VALUES (@idEquipo, @idUbicacion, @idUsuario, @idProfesor,@FechaPrestamo,@EstadoPrestamo,@HoraInicio,@HoraFin);");
             //Cargo parametros
             cmd.Parameters.Add(new SQLiteParameter("@idEquipo", p.EquipoPrestamo.Id));
             cmd.Parameters.Add(new SQLiteParameter("@idUbicacion", p.UbicacionPrestamo.IdUbicacion));
             cmd.Parameters.Add(new SQLiteParameter("@idUsuario", p.UsuarioPrestamo.IdUsuario));
             cmd.Parameters.Add(new SQLiteParameter("@idProfesor", p.EquipoPrestamo.Id));
-            cmd.Parameters.Add(new SQLiteParameter("@Duracion", p.duracion));
             cmd.Parameters.Add(new SQLiteParameter("@FechaPrestamo", p.FechaPrestamo));
             cmd.Parameters.Add(new SQLiteParameter("@EstadoPrestamo", p.EstadoPrestamo));
             cmd.Parameters.Add(new SQLiteParameter("@HoraInicio", p.HoraInicio));
@@ -30,28 +29,130 @@ namespace WF_Prestamo.Persistencia
             cmd.ExecuteNonQuery();
 
         }
-        public static List<Prestamo> Getall()
+
+        
+
+        public static List<Prestamo> GetAll()
         {
             List<Prestamo> lista = new List<Prestamo>();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT idPrestamo, idEquipo, idUbicacion, idUsuario, idProfesor,Duracion,FechaPrestamo, EstadoPrestamo,HoraInicio,HoraFin FROM Prestamo");
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idPrestamo, idEquipo, idUbicacion, idUsuario, idProfesor,FechaPrestamo, EstadoPrestamo,HoraInicio,HoraFin FROM Prestamo");
             cmd.Connection = Conexion.Connection;
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 Prestamo p = new Prestamo();
                 p.IdPrestamo = dr.GetInt32(0);
-                p.EquipoPrestamo.Id = dr.GetInt32(1);
-                p.UbicacionPrestamo.IdUbicacion = dr.GetInt32(2);
-                p.UsuarioPrestamo.IdUsuario = dr.GetInt32(3);
-                p.ProfesorPrestamo.Id = dr.GetInt32(4);
-                p.duracion = dr.GetString(5);
+                p.EquipoPrestamo = GetEquipoById(dr.GetInt32(1));
+                p.UbicacionPrestamo = GetUbicacionById(dr.GetInt32(2));
+                p.UsuarioPrestamo = GetUsuarioById(dr.GetInt32(3));
+                p.ProfesorPrestamo = GetProfesorById(dr.GetInt32(4));
                 p.FechaPrestamo = dr.GetString(6);
                 p.EstadoPrestamo = dr.GetString(7);
-                p.HoraInicio = dr.GetDateTime(8);
-                p.HoraFin = dr.GetDateTime(9);
+                p.HoraInicio = dr.GetString(8);
+                p.HoraFin = dr.GetString(9);
                 lista.Add(p);
             }
             return lista;
+        }
+
+        public static Profesor GetProfesorById(int id)
+        {
+            Profesor p = new Profesor();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idProfesor, Nombre, Apellido FROM Profesor WHERE idProfesor = @id");
+            cmd.Parameters.Add(new SQLiteParameter("@id", id));
+            cmd.Connection = Conexion.Connection;
+            //creo el datareader
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            //Recorro el datareader
+            while (reader.Read())
+            {
+                p.Id = reader.GetInt32(0);
+                p.Nombre = reader.GetString(1);
+                p.Apellido = reader.GetString(2);
+
+            }
+            return p;
+        }
+
+        public static Ubicacion GetUbicacionById(int id)
+        {
+
+            Ubicacion p = new Ubicacion();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idUbicacion, Aula, Edificio FROM Ubicacion WHERE idUbicacion = @id");
+            cmd.Parameters.Add(new SQLiteParameter("@id", id));
+            cmd.Connection = Conexion.Connection;
+            //creo el datareader
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            //Recorro el datareader
+            while (reader.Read())
+            {
+                p.IdUbicacion = reader.GetInt32(0);
+                p.Aula = reader.GetString(1);
+                p.Edificio = reader.GetString(2);
+            }
+            return p;
+        }
+
+        public static Usuario GetUsuarioById(int id)
+        {
+            Usuario p = new Usuario();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idUsuario, NombreUsuario FROM Usuario WHERE idUsuario = @id");
+            cmd.Parameters.Add(new SQLiteParameter("@id", id));
+            cmd.Connection = Conexion.Connection;
+            //creo el datareader
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            //Recorro el datareader
+            while (reader.Read())
+            {
+                p.IdUsuario = reader.GetInt32(0);
+                p.User = reader.GetString(1);
+            }
+            return p;
+        }
+
+        public static Equipo GetEquipoById(int id)
+        {
+
+            Equipo e = new Equipo();
+            TipoEquipo tp = new TipoEquipo();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idEquipo, idTipoEquipo, NombreEquipo FROM Equipo WHERE idEquipo = @id ");
+            cmd.Connection = Conexion.Connection;
+            //creo el datareader
+            cmd.Parameters.Add(new SQLiteParameter("@id", id));
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            //Recorro el datareader
+            while (reader.Read())
+            {
+                e.Id = reader.GetInt32(0);
+                e.TipoEquipo = GetTipoEquipoById(reader.GetInt32(1));
+                e.NombreEquipo = reader.GetString(2);
+            }
+
+            return e;
+
+        }
+
+        public static TipoEquipo GetTipoEquipoById(int id)
+        {
+
+            TipoEquipo p = new TipoEquipo();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idTipoEquipo,  Estado FROM TipoEquipo WHERE idTipoEquipo = @id");
+            cmd.Parameters.Add(new SQLiteParameter("@id", id));
+            cmd.Connection = Conexion.Connection;
+            //creo el datareader
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            //Recorro el datareader
+            while (reader.Read())
+            {
+
+                p.Id = reader.GetInt32(0);
+                p.Estado = reader.GetString(1);
+
+
+            }
+
+
+            return p;
         }
     }
             
