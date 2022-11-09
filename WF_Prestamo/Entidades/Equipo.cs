@@ -10,13 +10,11 @@ namespace WF_Prestamo.Entidades
     {
         int idEquipo;
         string nombreEquipo;
-        string cantidadEquipo;
         TipoEquipo tipoEquipo;
 
-        public Equipo(int idEquipo, string cantidadeEquipo,string nombreEquipo, TipoEquipo tipoEquipo)
+        public Equipo(int idEquipo,string nombreEquipo, TipoEquipo tipoEquipo)
         {
             this.idEquipo = idEquipo;
-            this.cantidadEquipo = cantidadeEquipo;
             this.nombreEquipo = nombreEquipo;
             this.tipoEquipo = tipoEquipo;
         }
@@ -30,7 +28,6 @@ namespace WF_Prestamo.Entidades
 
         public string NombreEquipo { get => nombreEquipo; set => nombreEquipo = value; }
 
-        public string CantidadEquipo { get => cantidadEquipo; set => cantidadEquipo = value; }
         public int Id { get => idEquipo; set => idEquipo = value; }
 
         public TipoEquipo TipoEquipo { get => tipoEquipo; set => tipoEquipo = value; }

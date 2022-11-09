@@ -18,6 +18,7 @@ namespace WF_Prestamo.Entidades
         Ubicacion Ubicacion;
         TipoEquipo TipoEquipo;
         Usuario Usuario;
+      
 
 
 
@@ -26,11 +27,10 @@ namespace WF_Prestamo.Entidades
             Equipo = new Equipo();
             Profesor = new Profesor();
             Ubicacion = new Ubicacion();
-            TipoEquipo = new TipoEquipo();
             Usuario = new Usuario();
         }
 
-        public Prestamo(int idPrestamo, string fechaPrestamo, string horaInicio, string horaFin, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, TipoEquipo tipoEquipo, Usuario usuario)
+        public Prestamo(int idPrestamo, string fechaPrestamo, string horaInicio, string horaFin, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, Usuario usuario)
         {
             this.idPrestamo = idPrestamo;
             this.fechaPrestamo = fechaPrestamo;
@@ -40,7 +40,6 @@ namespace WF_Prestamo.Entidades
             Equipo = equipo;
             Profesor = profesor;
             Ubicacion = ubicacion;
-            TipoEquipo = tipoEquipo;
             Usuario = usuario;
         }
 
@@ -52,7 +51,6 @@ namespace WF_Prestamo.Entidades
         public Equipo EquipoPrestamo { get => Equipo; set => Equipo = value; }
         public Profesor ProfesorPrestamo { get => Profesor; set => Profesor = value; }
         public Ubicacion UbicacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
-        public TipoEquipo TipoEquipoPrestamo { get => TipoEquipo; set => TipoEquipo = value; }
         public Usuario UsuarioPrestamo { get => Usuario; set => Usuario = value; }
 
 

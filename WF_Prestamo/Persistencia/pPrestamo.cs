@@ -46,10 +46,10 @@ namespace WF_Prestamo.Persistencia
                 p.UbicacionPrestamo = GetUbicacionById(dr.GetInt32(2));
                 p.UsuarioPrestamo = GetUsuarioById(dr.GetInt32(3));
                 p.ProfesorPrestamo = GetProfesorById(dr.GetInt32(4));
-                p.FechaPrestamo = dr.GetString(6);
-                p.EstadoPrestamo = dr.GetString(7);
-                p.HoraInicio = dr.GetString(8);
-                p.HoraFin = dr.GetString(9);
+                p.FechaPrestamo = dr.GetString(5);
+                p.EstadoPrestamo = dr.GetString(6);
+                p.HoraInicio = dr.GetString(7);
+                p.HoraFin = dr.GetString(8);
                 lista.Add(p);
             }
             return lista;
@@ -96,7 +96,7 @@ namespace WF_Prestamo.Persistencia
         public static Usuario GetUsuarioById(int id)
         {
             Usuario p = new Usuario();
-            SQLiteCommand cmd = new SQLiteCommand("SELECT idUsuario, NombreUsuario FROM Usuario WHERE idUsuario = @id");
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idUser, User FROM Usuario WHERE idUser = @id");
             cmd.Parameters.Add(new SQLiteParameter("@id", id));
             cmd.Connection = Conexion.Connection;
             //creo el datareader
@@ -153,6 +153,29 @@ namespace WF_Prestamo.Persistencia
 
 
             return p;
+        }
+     
+        public static void Cancelar(Prestamo p)
+        {
+            
+            //Creo script SQL a utilizar
+            SQLiteCommand cmd = new SQLiteCommand("UPDATE idPrestamo FROM Prestamo WHERE idPrestamo = @idPrestamo");
+
+            cmd.Connection = Conexion.Connection;
+            cmd.Parameters.Add(new SQLiteParameter("@idPrestamo", p.IdPrestamo));
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            cmd.ExecuteNonQuery();
+            
+            while (reader.Read())
+            {
+
+
+                p.EstadoPrestamo = "Cancelado";
+
+
+            }
+
+
         }
     }
             

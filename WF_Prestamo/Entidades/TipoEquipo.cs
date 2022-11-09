@@ -9,15 +9,16 @@ namespace WF_Prestamo.Entidades
     public class TipoEquipo
     {
         int id;
-        string estado;
+        
+        string nombre;
 
-        public TipoEquipo(string estado, int id)
+        public TipoEquipo(string nombre, int id)
         {
-            this.estado = estado;
+            this.nombre = nombre;
             this.id = id;
         }
 
-        public string Estado { get => estado; set => estado = value; }
+        public string Estado { get => nombre; set => nombre = value; }
 
         public int Id { get => id; set => id = value; }
 
@@ -28,7 +29,7 @@ namespace WF_Prestamo.Entidades
 
         public override string ToString()
         {
-            return estado;
+            return nombre;
         }
 
     }
