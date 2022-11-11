@@ -16,7 +16,6 @@ namespace WF_Prestamo.Entidades
         Equipo Equipo;
         Profesor Profesor;
         Ubicacion Ubicacion;
-        TipoEquipo TipoEquipo;
         Usuario Usuario;
       
 
@@ -52,6 +51,8 @@ namespace WF_Prestamo.Entidades
         public Profesor ProfesorPrestamo { get => Profesor; set => Profesor = value; }
         public Ubicacion UbicacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
         public Usuario UsuarioPrestamo { get => Usuario; set => Usuario = value; }
+
+
 
 
     }

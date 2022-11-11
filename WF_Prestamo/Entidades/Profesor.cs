@@ -27,5 +27,20 @@ namespace WF_Prestamo.Entidades
         public Profesor()
         {
         }
+
+        //get name + lastname as attribute
+        public string NombreCompleto
+        {
+            get
+            {
+                return apellido + ", " + nombre;
+            }
+        }
+
+        public override string ToString()
+        {
+            return NombreCompleto;
+        }
+
     }
 }

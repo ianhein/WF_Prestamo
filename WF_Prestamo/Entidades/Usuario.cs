@@ -13,7 +13,7 @@ namespace WF_Prestamo.Entidades
         string password;
         public Usuario() { }
 
-        public Usuario(string user,string password )
+        public Usuario(string user, string password)
         {
             this.user = user;
             this.password = password;
@@ -25,6 +25,22 @@ namespace WF_Prestamo.Entidades
 
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
 
+        public string NombreUsuario
+        {
+            get
+            {
+                return user;
+            }
+        }
+
+        
+        public override string ToString()
+        {
+            return NombreUsuario;
+        }
 
     }
 }
+
+
+

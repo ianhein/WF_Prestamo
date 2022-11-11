@@ -33,9 +33,25 @@ namespace WF_Prestamo.Entidades
         public TipoEquipo TipoEquipo { get => tipoEquipo; set => tipoEquipo = value; }
 
 
+        public string NombreCompleto
+        {
+            get
+            {
+                return nombreEquipo + ", " + tipoEquipo;
+            }
+        }
+
+        public string NombreTipoEquipo
+        {
+            get
+            {
+                return tipoEquipo.ToString();
+            }
+        }
+
         public override string ToString()
         {
-            return base.ToString();
+            return NombreCompleto;
         }
 
 

@@ -20,9 +20,9 @@ namespace WF_Prestamo.Forms.Equipos
         public fmAltaEquipo()
         {
             InitializeComponent();
-            tipoEquipoBindingSource.DataSource = pTipoEquipo.GetAll();
             
-
+            equipoBindingSource.DataSource = pEquipo.GetAll();
+            tipoEquipoBindingSource.DataSource = pTipoEquipo.GetAll();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -39,30 +39,19 @@ namespace WF_Prestamo.Forms.Equipos
 
         public void altaEquipo()
         {
-            Equipo e = new Entidades.Equipo();
-            e.NombreEquipo = btnAlta.Text;
-            e.CantidadEquipo = txtCantidad.Text;
+            Equipo eq = new Equipo();
+            eq.NombreEquipo= btnAlta.Text;
+            int id = ((TipoEquipo)tipoEquipoBindingSource.Current).Id;
+            pEquipo.Save(eq, id);
 
-            foreach (Equipo eq in pEquipo.GetAll())
-            {
-                if (eq.NombreEquipo == e.NombreEquipo)
-                {
-                    MessageBox.Show("El equipo ya existe");
-                    return;
-                }
-            }
-            if (btnAlta.Text != "" && txtCantidad.Text !="")
-            {
-                Conexion.OpenConexion();
-                pEquipo.Save(e);
-                MessageBox.Show("Se ha registrado Correctamente!");
-            }
-            else { MessageBox.Show("No puede dejar campos vacios!", "Error"); }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            int i = Convert.ToInt32(cbTipoEquipo.SelectedValue);
+            equipoBindingSource.DataSource = pEquipo.GetById(i);
+
 
         }
 
@@ -77,6 +66,11 @@ namespace WF_Prestamo.Forms.Equipos
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fmAltaEquipo_Load(object sender, EventArgs e)
         {
 
         }

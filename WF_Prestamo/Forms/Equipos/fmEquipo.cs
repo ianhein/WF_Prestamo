@@ -29,18 +29,17 @@ namespace WF_Prestamo.Forms.Equipos
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Conexion.OpenConexion();
-            
             equipoBindingSource.DataSource = pEquipo.GetAll();
 
         }
 
         private void btnBajaEquipo_Click(object sender, EventArgs e)
         {
-            new fmBajaEquipo((Equipo)equipoBindingSource.Current).ShowDialog();
+            int id = ((Equipo)equipoBindingSource.Current).Id;
+            fmBajaEquipo fmB = new fmBajaEquipo(id);
+            fmB.ShowDialog();
             Conexion.OpenConexion();
             equipoBindingSource.DataSource = pEquipo.GetAll();
-            
-
         }
     }
 }

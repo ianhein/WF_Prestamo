@@ -26,5 +26,20 @@ namespace WF_Prestamo.Entidades
         public Ubicacion()
         {
         }
+        
+        public string NombreCompleto
+        {
+            get
+            {
+                return edificio + " - " + aula;
+            }
+        }
+
+        public override string ToString()
+        {
+            return NombreCompleto;
+        }
+
+
     }
 }

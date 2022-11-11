@@ -11,14 +11,14 @@ namespace WF_Prestamo.Persistencia
 {
     internal class pPrestamo
     {
-        public static void Save(Prestamo p)
+        public static void Save(Prestamo p, int idEquipo, int idUbicacion, int idUsuario, int idProfesor)
         {
-            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Prestamo (idEquipo, idUbicacion, idUsuario, idProfesor,Duracion,FechaPrestamo, EstadoPrestamo,HoraInicio,HoraFin) VALUES (@idEquipo, @idUbicacion, @idUsuario, @idProfesor,@FechaPrestamo,@EstadoPrestamo,@HoraInicio,@HoraFin);");
+            SQLiteCommand cmd = new SQLiteCommand("INSERT INTO Prestamo (idEquipo, idUbicacion, idUsuario, idProfesor,FechaPrestamo, EstadoPrestamo,HoraInicio,HoraFin) VALUES (@idEquipo, @idUbicacion, @idUsuario, @idProfesor,@FechaPrestamo,@EstadoPrestamo,@HoraInicio,@HoraFin);");
             //Cargo parametros
-            cmd.Parameters.Add(new SQLiteParameter("@idEquipo", p.EquipoPrestamo.Id));
-            cmd.Parameters.Add(new SQLiteParameter("@idUbicacion", p.UbicacionPrestamo.IdUbicacion));
-            cmd.Parameters.Add(new SQLiteParameter("@idUsuario", p.UsuarioPrestamo.IdUsuario));
-            cmd.Parameters.Add(new SQLiteParameter("@idProfesor", p.EquipoPrestamo.Id));
+            cmd.Parameters.Add(new SQLiteParameter("@idEquipo", idEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@idUbicacion", idUbicacion));
+            cmd.Parameters.Add(new SQLiteParameter("@idUsuario", idUsuario));
+            cmd.Parameters.Add(new SQLiteParameter("@idProfesor", idProfesor));
             cmd.Parameters.Add(new SQLiteParameter("@FechaPrestamo", p.FechaPrestamo));
             cmd.Parameters.Add(new SQLiteParameter("@EstadoPrestamo", p.EstadoPrestamo));
             cmd.Parameters.Add(new SQLiteParameter("@HoraInicio", p.HoraInicio));

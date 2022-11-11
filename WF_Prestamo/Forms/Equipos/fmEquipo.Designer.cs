@@ -38,9 +38,8 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.NombreEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipo)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -70,9 +69,8 @@
             this.dataEquipo.AutoGenerateColumns = false;
             this.dataEquipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataEquipo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NombreEquipo,
-            this.CantidadEquipo,
-            this.TipoEquipo});
+            this.nombreEquipoDataGridViewTextBoxColumn,
+            this.tipoEquipoDataGridViewTextBoxColumn});
             this.dataEquipo.DataSource = this.equipoBindingSource;
             this.dataEquipo.Location = new System.Drawing.Point(3, 16);
             this.dataEquipo.Name = "dataEquipo";
@@ -139,29 +137,19 @@
             // 
             this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
             // 
-            // NombreEquipo
+            // nombreEquipoDataGridViewTextBoxColumn
             // 
-            this.NombreEquipo.DataPropertyName = "NombreEquipo";
-            this.NombreEquipo.HeaderText = "Nombre Equipo";
-            this.NombreEquipo.Name = "NombreEquipo";
-            this.NombreEquipo.ReadOnly = true;
-            this.NombreEquipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.nombreEquipoDataGridViewTextBoxColumn.DataPropertyName = "NombreEquipo";
+            this.nombreEquipoDataGridViewTextBoxColumn.HeaderText = "Nombre Equipo";
+            this.nombreEquipoDataGridViewTextBoxColumn.Name = "nombreEquipoDataGridViewTextBoxColumn";
+            this.nombreEquipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // CantidadEquipo
+            // tipoEquipoDataGridViewTextBoxColumn
             // 
-            this.CantidadEquipo.DataPropertyName = "CantidadEquipo";
-            this.CantidadEquipo.HeaderText = "Cantidad Equipo";
-            this.CantidadEquipo.Name = "CantidadEquipo";
-            this.CantidadEquipo.ReadOnly = true;
-            this.CantidadEquipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // TipoEquipo
-            // 
-            this.TipoEquipo.DataPropertyName = "TipoEquipo";
-            this.TipoEquipo.HeaderText = "Tipo Equipo";
-            this.TipoEquipo.Name = "TipoEquipo";
-            this.TipoEquipo.ReadOnly = true;
-            this.TipoEquipo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.tipoEquipoDataGridViewTextBoxColumn.DataPropertyName = "TipoEquipo";
+            this.tipoEquipoDataGridViewTextBoxColumn.HeaderText = "Tipo Equipo";
+            this.tipoEquipoDataGridViewTextBoxColumn.Name = "tipoEquipoDataGridViewTextBoxColumn";
+            this.tipoEquipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fmEquipo
             // 
@@ -193,9 +181,8 @@
         private System.Windows.Forms.BindingSource equipoBindingSource;
         private System.Windows.Forms.BindingSource prestamoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEquipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadEquipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreEquipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoEquipoDataGridViewTextBoxColumn;
     }
 }

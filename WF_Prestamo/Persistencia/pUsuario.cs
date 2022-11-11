@@ -65,7 +65,7 @@ namespace WF_Prestamo.Persistencia
             while (obdr.Read())
             {
                 Usuario u = new Usuario();
-
+                u.IdUsuario = obdr.GetInt32(0);
                 u.User = obdr.GetString(1);
                 u.Password = obdr.GetString(2);
                 usuarios.Add(u);

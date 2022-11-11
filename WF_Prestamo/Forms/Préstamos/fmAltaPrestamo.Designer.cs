@@ -29,131 +29,98 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblProfesor = new System.Windows.Forms.Label();
-            this.lblAula = new System.Windows.Forms.Label();
+            this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtProfesor = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblHoraFinal = new System.Windows.Forms.Label();
-            this.lblHoraInicio = new System.Windows.Forms.Label();
-            this.lblPrestamo = new System.Windows.Forms.Label();
-            this.lblFechaPrestamo = new System.Windows.Forms.Label();
             this.comboBoxProfesor = new System.Windows.Forms.ComboBox();
             this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBoxAula = new System.Windows.Forms.ComboBox();
+            this.comboBoxUbicacion = new System.Windows.Forms.ComboBox();
             this.ubicacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.datePrestamo = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeHoraInicio = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeHoraFin = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxUsuario = new System.Windows.Forms.ComboBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
+            this.dateTimeFechaPrestamo = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tipoEquipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimeHoraInicio = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimeHoraFin = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxEstadoPrestamo = new System.Windows.Forms.ComboBox();
+            this.buttonAltaPrestamo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoEquipoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // prestamoBindingSource
             // 
-            this.button1.Location = new System.Drawing.Point(180, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
             // 
-            // lblProfesor
+            // txtProfesor
             // 
-            this.lblProfesor.AutoSize = true;
-            this.lblProfesor.Location = new System.Drawing.Point(105, 41);
-            this.lblProfesor.Name = "lblProfesor";
-            this.lblProfesor.Size = new System.Drawing.Size(46, 13);
-            this.lblProfesor.TabIndex = 2;
-            this.lblProfesor.Text = "Profesor";
-            this.lblProfesor.Click += new System.EventHandler(this.label1_Click);
+            this.txtProfesor.AutoSize = true;
+            this.txtProfesor.Location = new System.Drawing.Point(97, 18);
+            this.txtProfesor.Name = "txtProfesor";
+            this.txtProfesor.Size = new System.Drawing.Size(49, 13);
+            this.txtProfesor.TabIndex = 0;
+            this.txtProfesor.Text = "Profesor:";
+            this.txtProfesor.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lblAula
+            // label1
             // 
-            this.lblAula.AutoSize = true;
-            this.lblAula.Location = new System.Drawing.Point(114, 68);
-            this.lblAula.Name = "lblAula";
-            this.lblAula.Size = new System.Drawing.Size(28, 13);
-            this.lblAula.TabIndex = 3;
-            this.lblAula.Text = "Aula";
-            this.lblAula.Click += new System.EventHandler(this.label2_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(88, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ubicación:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(103, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Equipo:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(108, 100);
+            this.label3.Location = new System.Drawing.Point(100, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Equipo";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Usuario:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 1120);
+            this.label4.Location = new System.Drawing.Point(43, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Usuario";
-            // 
-            // lblHoraFinal
-            // 
-            this.lblHoraFinal.AutoSize = true;
-            this.lblHoraFinal.Location = new System.Drawing.Point(33, 228);
-            this.lblHoraFinal.Name = "lblHoraFinal";
-            this.lblHoraFinal.Size = new System.Drawing.Size(115, 13);
-            this.lblHoraFinal.TabIndex = 7;
-            this.lblHoraFinal.Text = "Hora final del prestamo";
-            // 
-            // lblHoraInicio
-            // 
-            this.lblHoraInicio.AutoSize = true;
-            this.lblHoraInicio.Location = new System.Drawing.Point(28, 202);
-            this.lblHoraInicio.Name = "lblHoraInicio";
-            this.lblHoraInicio.Size = new System.Drawing.Size(120, 13);
-            this.lblHoraInicio.TabIndex = 8;
-            this.lblHoraInicio.Text = "Hora inicio del prestamo";
-            // 
-            // lblPrestamo
-            // 
-            this.lblPrestamo.AutoSize = true;
-            this.lblPrestamo.Location = new System.Drawing.Point(48, 147);
-            this.lblPrestamo.Name = "lblPrestamo";
-            this.lblPrestamo.Size = new System.Drawing.Size(103, 13);
-            this.lblPrestamo.TabIndex = 9;
-            this.lblPrestamo.Text = "Estado del prestamo";
-            this.lblPrestamo.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // lblFechaPrestamo
-            // 
-            this.lblFechaPrestamo.AutoSize = true;
-            this.lblFechaPrestamo.Location = new System.Drawing.Point(48, 176);
-            this.lblFechaPrestamo.Name = "lblFechaPrestamo";
-            this.lblFechaPrestamo.Size = new System.Drawing.Size(100, 13);
-            this.lblFechaPrestamo.TabIndex = 10;
-            this.lblFechaPrestamo.Text = "Fecha del prestamo";
-            this.lblFechaPrestamo.Click += new System.EventHandler(this.label9_Click);
+            this.label4.Size = new System.Drawing.Size(103, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Fecha del préstamo:";
             // 
             // comboBoxProfesor
             // 
             this.comboBoxProfesor.DataSource = this.profesorBindingSource;
-            this.comboBoxProfesor.DisplayMember = "Nombre";
+            this.comboBoxProfesor.DisplayMember = "NombreCompleto";
             this.comboBoxProfesor.FormattingEnabled = true;
-            this.comboBoxProfesor.Location = new System.Drawing.Point(154, 38);
+            this.comboBoxProfesor.Location = new System.Drawing.Point(152, 18);
             this.comboBoxProfesor.Name = "comboBoxProfesor";
-            this.comboBoxProfesor.Size = new System.Drawing.Size(241, 21);
-            this.comboBoxProfesor.TabIndex = 11;
+            this.comboBoxProfesor.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxProfesor.TabIndex = 6;
             this.comboBoxProfesor.ValueMember = "Id";
             this.comboBoxProfesor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -161,21 +128,16 @@
             // 
             this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
             // 
-            // prestamoBindingSource
+            // comboBoxUbicacion
             // 
-            this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
-            // 
-            // comboBoxAula
-            // 
-            this.comboBoxAula.DataSource = this.ubicacionBindingSource;
-            this.comboBoxAula.DisplayMember = "Aula";
-            this.comboBoxAula.FormattingEnabled = true;
-            this.comboBoxAula.Location = new System.Drawing.Point(154, 65);
-            this.comboBoxAula.Name = "comboBoxAula";
-            this.comboBoxAula.Size = new System.Drawing.Size(241, 21);
-            this.comboBoxAula.TabIndex = 12;
-            this.comboBoxAula.ValueMember = "IdUbicacion";
-            this.comboBoxAula.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBoxUbicacion.DataSource = this.ubicacionBindingSource;
+            this.comboBoxUbicacion.DisplayMember = "NombreCompleto";
+            this.comboBoxUbicacion.FormattingEnabled = true;
+            this.comboBoxUbicacion.Location = new System.Drawing.Point(152, 45);
+            this.comboBoxUbicacion.Name = "comboBoxUbicacion";
+            this.comboBoxUbicacion.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxUbicacion.TabIndex = 7;
+            this.comboBoxUbicacion.ValueMember = "Id";
             // 
             // ubicacionBindingSource
             // 
@@ -184,142 +146,198 @@
             // comboBox3
             // 
             this.comboBox3.DataSource = this.equipoBindingSource;
-            this.comboBox3.DisplayMember = "NombreEquipo";
+            this.comboBox3.DisplayMember = "NombreCompleto";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(154, 92);
+            this.comboBox3.Location = new System.Drawing.Point(152, 75);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(241, 21);
-            this.comboBox3.TabIndex = 13;
-            this.comboBox3.ValueMember = "NombreEquipo";
+            this.comboBox3.Size = new System.Drawing.Size(197, 21);
+            this.comboBox3.TabIndex = 8;
+            this.comboBox3.ValueMember = "Id";
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // equipoBindingSource
             // 
             this.equipoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Equipo);
             // 
-            // datePrestamo
+            // comboBoxUsuario
             // 
-            this.datePrestamo.Location = new System.Drawing.Point(154, 170);
-            this.datePrestamo.Name = "datePrestamo";
-            this.datePrestamo.Size = new System.Drawing.Size(241, 20);
-            this.datePrestamo.TabIndex = 18;
-            this.datePrestamo.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // dateTimeHoraInicio
-            // 
-            this.dateTimeHoraInicio.CustomFormat = "HH:mm";
-            this.dateTimeHoraInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeHoraInicio.Location = new System.Drawing.Point(154, 196);
-            this.dateTimeHoraInicio.Name = "dateTimeHoraInicio";
-            this.dateTimeHoraInicio.ShowUpDown = true;
-            this.dateTimeHoraInicio.Size = new System.Drawing.Size(241, 20);
-            this.dateTimeHoraInicio.TabIndex = 19;
-            this.dateTimeHoraInicio.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
-            // 
-            // dateTimeHoraFin
-            // 
-            this.dateTimeHoraFin.CustomFormat = "HH:mm";
-            this.dateTimeHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeHoraFin.Location = new System.Drawing.Point(154, 222);
-            this.dateTimeHoraFin.Name = "dateTimeHoraFin";
-            this.dateTimeHoraFin.ShowUpDown = true;
-            this.dateTimeHoraFin.Size = new System.Drawing.Size(241, 20);
-            this.dateTimeHoraFin.TabIndex = 20;
-            this.dateTimeHoraFin.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(154, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 20);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 125);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Usuario:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.usuarioBindingSource;
-            this.comboBox1.DisplayMember = "User";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(154, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(241, 21);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.ValueMember = "IdUsuario";
+            this.comboBoxUsuario.DataSource = this.usuarioBindingSource;
+            this.comboBoxUsuario.DisplayMember = "User";
+            this.comboBoxUsuario.FormattingEnabled = true;
+            this.comboBoxUsuario.Location = new System.Drawing.Point(152, 129);
+            this.comboBoxUsuario.Name = "comboBoxUsuario";
+            this.comboBoxUsuario.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxUsuario.TabIndex = 9;
+            this.comboBoxUsuario.ValueMember = "IdUsuario";
+            this.comboBoxUsuario.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsuario_SelectedIndexChanged);
             // 
             // usuarioBindingSource
             // 
             this.usuarioBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Usuario);
             // 
+            // dateTimeFechaPrestamo
+            // 
+            this.dateTimeFechaPrestamo.Location = new System.Drawing.Point(152, 157);
+            this.dateTimeFechaPrestamo.Name = "dateTimeFechaPrestamo";
+            this.dateTimeFechaPrestamo.Size = new System.Drawing.Size(197, 20);
+            this.dateTimeFechaPrestamo.TabIndex = 11;
+            this.dateTimeFechaPrestamo.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 102);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Estado del equipo";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.tipoEquipoBindingSource;
+            this.comboBox2.DisplayMember = "Estado";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(152, 102);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(197, 21);
+            this.comboBox2.TabIndex = 15;
+            this.comboBox2.ValueMember = "Id";
+            // 
+            // tipoEquipoBindingSource
+            // 
+            this.tipoEquipoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.TipoEquipo);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Hora inicio del préstamo:";
+            // 
+            // dateTimeHoraInicio
+            // 
+            this.dateTimeHoraInicio.CustomFormat = "HH:mm";
+            this.dateTimeHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeHoraInicio.Location = new System.Drawing.Point(152, 185);
+            this.dateTimeHoraInicio.Name = "dateTimeHoraInicio";
+            this.dateTimeHoraInicio.ShowUpDown = true;
+            this.dateTimeHoraInicio.Size = new System.Drawing.Size(197, 20);
+            this.dateTimeHoraInicio.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 212);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Hora fin del préstamo:";
+            // 
+            // dateTimeHoraFin
+            // 
+            this.dateTimeHoraFin.CustomFormat = "HH:mm";
+            this.dateTimeHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeHoraFin.Location = new System.Drawing.Point(152, 212);
+            this.dateTimeHoraFin.Name = "dateTimeHoraFin";
+            this.dateTimeHoraFin.ShowUpDown = true;
+            this.dateTimeHoraFin.Size = new System.Drawing.Size(197, 20);
+            this.dateTimeHoraFin.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(40, 238);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Estado del préstamo;";
+            // 
+            // comboBoxEstadoPrestamo
+            // 
+            this.comboBoxEstadoPrestamo.FormattingEnabled = true;
+            this.comboBoxEstadoPrestamo.Items.AddRange(new object[] {
+            "Pendiente",
+            "Aceptado",
+            "Cancelado"});
+            this.comboBoxEstadoPrestamo.Location = new System.Drawing.Point(152, 238);
+            this.comboBoxEstadoPrestamo.Name = "comboBoxEstadoPrestamo";
+            this.comboBoxEstadoPrestamo.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxEstadoPrestamo.TabIndex = 21;
+            // 
+            // buttonAltaPrestamo
+            // 
+            this.buttonAltaPrestamo.Location = new System.Drawing.Point(152, 287);
+            this.buttonAltaPrestamo.Name = "buttonAltaPrestamo";
+            this.buttonAltaPrestamo.Size = new System.Drawing.Size(197, 23);
+            this.buttonAltaPrestamo.TabIndex = 22;
+            this.buttonAltaPrestamo.Text = "Guardar";
+            this.buttonAltaPrestamo.UseVisualStyleBackColor = true;
+            this.buttonAltaPrestamo.Click += new System.EventHandler(this.buttonAltaPrestamo_Click);
+            // 
             // fmAltaPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 301);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(494, 322);
+            this.Controls.Add(this.buttonAltaPrestamo);
+            this.Controls.Add(this.comboBoxEstadoPrestamo);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimeHoraFin);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.dateTimeHoraInicio);
-            this.Controls.Add(this.datePrestamo);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dateTimeFechaPrestamo);
+            this.Controls.Add(this.comboBoxUsuario);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBoxAula);
+            this.Controls.Add(this.comboBoxUbicacion);
             this.Controls.Add(this.comboBoxProfesor);
-            this.Controls.Add(this.lblFechaPrestamo);
-            this.Controls.Add(this.lblPrestamo);
-            this.Controls.Add(this.lblHoraInicio);
-            this.Controls.Add(this.lblHoraFinal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblAula);
-            this.Controls.Add(this.lblProfesor);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtProfesor);
             this.Name = "fmAltaPrestamo";
             this.Text = "fmAltaPrestamo";
-            this.Load += new System.EventHandler(this.fmAltaPrestamo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoEquipoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblProfesor;
-        private System.Windows.Forms.Label lblAula;
+        private System.Windows.Forms.BindingSource prestamoBindingSource;
+        private System.Windows.Forms.Label txtProfesor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblHoraFinal;
-        private System.Windows.Forms.Label lblHoraInicio;
-        private System.Windows.Forms.Label lblPrestamo;
-        private System.Windows.Forms.Label lblFechaPrestamo;
         private System.Windows.Forms.ComboBox comboBoxProfesor;
         private System.Windows.Forms.BindingSource profesorBindingSource;
-        private System.Windows.Forms.BindingSource prestamoBindingSource;
-        private System.Windows.Forms.ComboBox comboBoxAula;
+        private System.Windows.Forms.ComboBox comboBoxUbicacion;
         private System.Windows.Forms.BindingSource ubicacionBindingSource;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.BindingSource equipoBindingSource;
-        private System.Windows.Forms.DateTimePicker datePrestamo;
-        private System.Windows.Forms.DateTimePicker dateTimeHoraFin;
-        private System.Windows.Forms.DateTimePicker dateTimeHoraInicio;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxUsuario;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
+        private System.Windows.Forms.DateTimePicker dateTimeFechaPrestamo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource tipoEquipoBindingSource;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dateTimeHoraInicio;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimeHoraFin;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBoxEstadoPrestamo;
+        private System.Windows.Forms.Button buttonAltaPrestamo;
     }
 }

@@ -19,12 +19,14 @@ namespace WF_Prestamo.Forms.Equipos
             InitializeComponent();
             Conexion.OpenConexion();
             equipoBindingSource.Add(pEquipo.GetById(id));
+            tipoEquipoBindingSource.Add(pTipoEquipo.GetById(id));
         }
 
-        public fmBajaEquipo(Equipo e)
+        public fmBajaEquipo(Equipo e, int idTipoEquipo)
         {
             InitializeComponent();
             equipoBindingSource.Add(e);
+            tipoEquipoBindingSource.Add(pTipoEquipo.GetById(idTipoEquipo));
         }
 
 
@@ -45,16 +47,30 @@ namespace WF_Prestamo.Forms.Equipos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                Conexion.OpenConexion();
-                pEquipo.Delete((Equipo)equipoBindingSource.Current);
-                pEquipo.GetAll();
-                pTipoEquipo.GetAll();
-                Conexion.CloseConexion();
-                Close();
-            }
+            bajEquipo();
+            this.Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void bajEquipo()
+        {
+            Equipo eq = new Equipo();
+            TipoEquipo te = new TipoEquipo();
+            eq.Id = Convert.ToInt32(txtId.Text);
+            eq.NombreEquipo = txtNombre.Text;
+            eq.TipoEquipo = te;
+            pEquipo.Delete(eq.Id);
+
+
+        }
+
+        private void fmBajaEquipo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

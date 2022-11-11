@@ -16,19 +16,29 @@ namespace WF_Prestamo.Forms.Préstamos
         public fmPrestamo()
         {
             InitializeComponent();
+            prestamoBindingSource.DataSource = pPrestamo.GetAll();
         }
 
         private void dataPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Conexion.OpenConexion();
+            prestamoBindingSource.DataSource = pPrestamo.GetAll();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             fmAltaPrestamo fmAltaPrestamo = new fmAltaPrestamo();
-            fmAltaPrestamo.Show();
+            fmAltaPrestamo.ShowDialog();
             Conexion.OpenConexion();
             prestamoBindingSource.DataSource = pPrestamo.GetAll();
+            
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

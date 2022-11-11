@@ -214,11 +214,11 @@
     <EmbeddedResource Include="Forms\Profesores\fmProfesor.resx">
       <DependentUpon>fmProfesor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Préstamos\fmPrestamo.resx">
-      <DependentUpon>fmPrestamo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Préstamos\fmAltaPrestamo.resx">
       <DependentUpon>fmAltaPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Préstamos\fmPrestamo.resx">
+      <DependentUpon>fmPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ubicaciones\fmAltaUbicacion.resx">
       <DependentUpon>fmAltaUbicacion.cs</DependentUpon>
