@@ -17,8 +17,7 @@ namespace WF_Prestamo.Entidades
         Profesor Profesor;
         Ubicacion Ubicacion;
         Usuario Usuario;
-      
-
+        TipoEquipo TipoEquipo;
 
 
         public Prestamo()
@@ -27,9 +26,10 @@ namespace WF_Prestamo.Entidades
             Profesor = new Profesor();
             Ubicacion = new Ubicacion();
             Usuario = new Usuario();
+            TipoEquipo = new TipoEquipo();
         }
 
-        public Prestamo(int idPrestamo, string fechaPrestamo, string horaInicio, string horaFin, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, Usuario usuario)
+        public Prestamo(int idPrestamo, string fechaPrestamo, string horaInicio, string horaFin, string estadoPrestamo, Equipo equipo, Profesor profesor, Ubicacion ubicacion, Usuario usuario, TipoEquipo tipoEquipo)
         {
             this.idPrestamo = idPrestamo;
             this.fechaPrestamo = fechaPrestamo;
@@ -40,8 +40,9 @@ namespace WF_Prestamo.Entidades
             Profesor = profesor;
             Ubicacion = ubicacion;
             Usuario = usuario;
+            TipoEquipo = tipoEquipo;
         }
-
+       
         public int IdPrestamo { get => idPrestamo; set => idPrestamo = value; }
         public string FechaPrestamo { get => fechaPrestamo; set => fechaPrestamo = value; }
         public string HoraInicio { get => horaInicio; set => horaInicio = value; }
@@ -51,9 +52,14 @@ namespace WF_Prestamo.Entidades
         public Profesor ProfesorPrestamo { get => Profesor; set => Profesor = value; }
         public Ubicacion UbicacionPrestamo { get => Ubicacion; set => Ubicacion = value; }
         public Usuario UsuarioPrestamo { get => Usuario; set => Usuario = value; }
+        public TipoEquipo TipoEquipoPrestamo { get => TipoEquipo; set => TipoEquipo = value; }
 
 
 
+        public override string ToString()
+        {
+            return IdPrestamo.ToString();
+        }
 
     }
 }

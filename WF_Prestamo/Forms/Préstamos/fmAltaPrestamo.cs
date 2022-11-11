@@ -67,22 +67,40 @@ namespace WF_Prestamo.Forms.Préstamos
             int idUbicacion = ((Ubicacion)ubicacionBindingSource.Current).IdUbicacion;
             int idEquipo = ((Equipo)equipoBindingSource.Current).Id;
             int idUsuario = ((Usuario)usuarioBindingSource.Current).IdUsuario;
-            
+            int idTipoEquipo = ((TipoEquipo)tipoEquipoBindingSource.Current).Id;
+
+
+
             p.ProfesorPrestamo.Id = idProfesor;
             p.UbicacionPrestamo.IdUbicacion = idUbicacion;
             p.EquipoPrestamo.Id = idEquipo;
             p.UsuarioPrestamo.IdUsuario = idUsuario;
+            p.TipoEquipoPrestamo.Id = idTipoEquipo;
 
             p.FechaPrestamo = dateTimeFechaPrestamo.Text = dateTimeFechaPrestamo.Value.ToString("yyyy-MM-dd");
             p.HoraInicio = dateTimeHoraInicio.Value.ToString("HH:mm");
             p.HoraFin = dateTimeHoraFin.Value.ToString("HH:mm");
+            //combobox Estado prestamo to string
             p.EstadoPrestamo = comboBoxEstadoPrestamo.Text;
+            //add new prestamo
+
 
             Conexion.OpenConexion();
-            pPrestamo.Save(p, idEquipo, idUbicacion, idUsuario, idProfesor);
+            pPrestamo.Save(p, idEquipo, idUbicacion, idUsuario, idProfesor, idTipoEquipo);
         }
 
         private void comboBoxUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = Convert.ToInt32(comboBoxEstadoPrestamo.SelectedValue);
+            prestamoBindingSource.DataSource = pPrestamo.GetById(i);
+        }
+
+        private void comboBoxEstadoPrestamo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

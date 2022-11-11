@@ -37,7 +37,7 @@ namespace WF_Prestamo.Entidades
         {
             get
             {
-                return nombreEquipo + ", " + tipoEquipo;
+                return nombreEquipo;
             }
         }
 

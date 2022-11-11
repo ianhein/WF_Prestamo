@@ -27,9 +27,17 @@ namespace WF_Prestamo.Entidades
         {
         }
 
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+        }
+
         public override string ToString()
         {
-            return nombre;
+            return Nombre;
         }
 
     }

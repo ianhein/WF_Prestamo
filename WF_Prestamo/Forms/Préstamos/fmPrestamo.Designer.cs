@@ -63,7 +63,12 @@
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.IdPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EquipoPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProfesorPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UsuarioPrestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPrestamos)).BeginInit();
@@ -89,7 +94,12 @@
             this.dataPrestamos.AutoGenerateColumns = false;
             this.dataPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdPrestamo,
+            this.FechaPrestamo,
+            this.HoraInicio,
+            this.HoraFin,
+            this.EstadoPrestamo,
+            this.EquipoPrestamo,
+            this.ProfesorPrestamo,
             this.UsuarioPrestamo});
             this.dataPrestamos.DataSource = this.prestamoBindingSource;
             this.dataPrestamos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -318,12 +328,47 @@
             // 
             this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
             // 
-            // IdPrestamo
+            // FechaPrestamo
             // 
-            this.IdPrestamo.DataPropertyName = "IdPrestamo";
-            this.IdPrestamo.HeaderText = "IdPrestamo";
-            this.IdPrestamo.Name = "IdPrestamo";
-            this.IdPrestamo.ReadOnly = true;
+            this.FechaPrestamo.DataPropertyName = "FechaPrestamo";
+            this.FechaPrestamo.HeaderText = "FechaPrestamo";
+            this.FechaPrestamo.Name = "FechaPrestamo";
+            this.FechaPrestamo.ReadOnly = true;
+            // 
+            // HoraInicio
+            // 
+            this.HoraInicio.DataPropertyName = "HoraInicio";
+            this.HoraInicio.HeaderText = "HoraInicio";
+            this.HoraInicio.Name = "HoraInicio";
+            this.HoraInicio.ReadOnly = true;
+            // 
+            // HoraFin
+            // 
+            this.HoraFin.DataPropertyName = "HoraFin";
+            this.HoraFin.HeaderText = "HoraFin";
+            this.HoraFin.Name = "HoraFin";
+            this.HoraFin.ReadOnly = true;
+            // 
+            // EstadoPrestamo
+            // 
+            this.EstadoPrestamo.DataPropertyName = "EstadoPrestamo";
+            this.EstadoPrestamo.HeaderText = "EstadoPrestamo";
+            this.EstadoPrestamo.Name = "EstadoPrestamo";
+            this.EstadoPrestamo.ReadOnly = true;
+            // 
+            // EquipoPrestamo
+            // 
+            this.EquipoPrestamo.DataPropertyName = "EquipoPrestamo";
+            this.EquipoPrestamo.HeaderText = "EquipoPrestamo";
+            this.EquipoPrestamo.Name = "EquipoPrestamo";
+            this.EquipoPrestamo.ReadOnly = true;
+            // 
+            // ProfesorPrestamo
+            // 
+            this.ProfesorPrestamo.DataPropertyName = "ProfesorPrestamo";
+            this.ProfesorPrestamo.HeaderText = "ProfesorPrestamo";
+            this.ProfesorPrestamo.Name = "ProfesorPrestamo";
+            this.ProfesorPrestamo.ReadOnly = true;
             // 
             // UsuarioPrestamo
             // 
@@ -386,7 +431,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPrestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaPrestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoPrestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EquipoPrestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProfesorPrestamo;
         private System.Windows.Forms.DataGridViewTextBoxColumn UsuarioPrestamo;
     }
 }

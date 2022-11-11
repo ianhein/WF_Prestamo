@@ -195,13 +195,14 @@
             // comboBox2
             // 
             this.comboBox2.DataSource = this.tipoEquipoBindingSource;
-            this.comboBox2.DisplayMember = "Estado";
+            this.comboBox2.DisplayMember = "Nombre";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(152, 102);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(197, 21);
             this.comboBox2.TabIndex = 15;
             this.comboBox2.ValueMember = "Id";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // tipoEquipoBindingSource
             // 
@@ -265,6 +266,7 @@
             this.comboBoxEstadoPrestamo.Name = "comboBoxEstadoPrestamo";
             this.comboBoxEstadoPrestamo.Size = new System.Drawing.Size(197, 21);
             this.comboBoxEstadoPrestamo.TabIndex = 21;
+            this.comboBoxEstadoPrestamo.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstadoPrestamo_SelectedIndexChanged);
             // 
             // buttonAltaPrestamo
             // 
