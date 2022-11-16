@@ -13,6 +13,10 @@ using WF_Prestamo.Forms;
 using System.IO;
 using System.Media;
 using System.Reflection;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Runtime.ConstrainedExecution;
+
 
 namespace WF_Prestamo
 {
@@ -33,29 +37,30 @@ namespace WF_Prestamo
 
         }
 
+       
+
         public void Ingresar()
         {
             Usuario u = new Usuario();
-
-            u.User = Usuario.Text;
-            u.Password = pass.Text;
-            List<Usuario> usuarios = pUsuario.GetByUser(u.User, u.Password);
-            u.User = Program.user;
-
-            if (usuarios.Count == 1)
+            u = pUsuario.GetByUser1(Usuario.Text);
+            if (u == null)
             {
-
-                MessageBox.Show("Bienvenido");
-                this.Hide();
-                Usuarios mp = new Usuarios();
-                mp.ShowDialog();
+                MessageBox.Show("Usuario incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
-
+                if (u.Password == CreateMD5(pass.Text))
+                {
+                    MessageBox.Show("Bienvenido, " + u.NombreUsuario, "Usuario correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    Usuarios mp = new Usuarios();
+                    mp.ShowDialog();
+                }
+                else 
+                {
+                    MessageBox.Show("contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
         }
         private void pass_TextChanged(object sender, EventArgs e)
         {
@@ -74,21 +79,27 @@ namespace WF_Prestamo
         }
         public void Registrarse()
         {
+          
             Usuario u = new Usuario();
-
-            u.User = Usuario.Text;
-            u.Password = pass.Text;
+            {
+                u.User = Usuario.Text;
+                u.Password = CreateMD5(pass.Text);
+            };
+            
         
             foreach (Usuario a in pUsuario.GetAll())
             {
                 if (u.User == a.User)
                 {
-                    if (MessageBox.Show("Ese usuario ya esta en uso! elige otro") == DialogResult.OK)
-                    {
-                        Usuario.Clear();
-                        pass.Clear();
-                    }
+                    MessageBox.Show("El usuario ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+                if (u.User == "" || u.Password == "")
+                {
+                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
             }
             if (Usuario.Text != "" && pass.Text != "")
             {
@@ -96,7 +107,26 @@ namespace WF_Prestamo
                 MessageBox.Show("Se ha registrado Correctamente!");
             }
             else { MessageBox.Show("No puede dejar campos vacios!", "Error"); }
+
+
         }
+
+        public static string CreateMD5(string input)
+        {
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
+
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             SystemSounds.Asterisk.Play();
@@ -105,7 +135,7 @@ namespace WF_Prestamo
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

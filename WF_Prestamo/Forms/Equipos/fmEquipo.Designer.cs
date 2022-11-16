@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataEquipo = new System.Windows.Forms.DataGridView();
+            this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBajaEquipo = new System.Windows.Forms.Button();
             this.btnAltaEquipo = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipo)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,10 @@
             this.dataEquipo.Size = new System.Drawing.Size(339, 472);
             this.dataEquipo.TabIndex = 0;
             this.dataEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // equipoBindingSource
+            // 
+            this.equipoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Equipo);
             // 
             // groupBox2
             // 
@@ -129,16 +133,13 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "TipoEquipo";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // equipoBindingSource
-            // 
-            this.equipoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Equipo);
-            // 
             // prestamoBindingSource
             // 
             this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
             // 
             // nombreEquipoDataGridViewTextBoxColumn
             // 
+            this.nombreEquipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nombreEquipoDataGridViewTextBoxColumn.DataPropertyName = "NombreEquipo";
             this.nombreEquipoDataGridViewTextBoxColumn.HeaderText = "Nombre Equipo";
             this.nombreEquipoDataGridViewTextBoxColumn.Name = "nombreEquipoDataGridViewTextBoxColumn";
@@ -163,8 +164,8 @@
             this.Load += new System.EventHandler(this.fmEquipo_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipo)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
             this.ResumeLayout(false);
 

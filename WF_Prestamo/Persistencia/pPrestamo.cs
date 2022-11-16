@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WF_Prestamo.Entidades;
+using WF_Prestamo.Forms.Equipos;
+using WF_Prestamo.Forms.Ubicaciones;
+using WF_Prestamo.Forms;
 using WF_Prestamo.Persistencia;
 
 namespace WF_Prestamo.Persistencia
@@ -31,7 +34,24 @@ namespace WF_Prestamo.Persistencia
 
         }
 
-        
+        public static void Update(Prestamo p, int idEquipo, int idUbicacion, int idUsuario, int idProfesor, int idTipoEquipo)
+        {
+            SQLiteCommand cmd = new SQLiteCommand("UPDATE Prestamo SET idEquipo= @idEquipo, idUbicacion= @idUbicacion, idUsuario= @idUsuario, idProfesor= @idProfesor, idTipoEquipo= @idTipoEquipo, FechaPrestamo= @FechaPrestamo, EstadoPrestamo= @EstadoPrestamo, HoraInicio= @HoraInicio, HoraFin= @HoraFin WHERE idPrestamo= @idPrestamo;");
+            //Cargo parametros
+            cmd.Parameters.Add(new SQLiteParameter("@idEquipo", idEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@idUbicacion", idUbicacion));
+            cmd.Parameters.Add(new SQLiteParameter("@idUsuario", idUsuario));
+            cmd.Parameters.Add(new SQLiteParameter("@idProfesor", idProfesor));
+            cmd.Parameters.Add(new SQLiteParameter("@idTipoEquipo", idTipoEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@FechaPrestamo", p.FechaPrestamo));
+            cmd.Parameters.Add(new SQLiteParameter("@EstadoPrestamo", p.EstadoPrestamo));
+            cmd.Parameters.Add(new SQLiteParameter("@HoraInicio", p.HoraInicio));
+            cmd.Parameters.Add(new SQLiteParameter("@HoraFin", p.HoraFin));
+
+            //asigno conexion
+            cmd.Connection = Conexion.Connection;
+            cmd.ExecuteNonQuery();
+        }
 
         public static List<Prestamo> GetAll()
         {
@@ -41,17 +61,19 @@ namespace WF_Prestamo.Persistencia
             SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Prestamo p = new Prestamo();
-                p.IdPrestamo = dr.GetInt32(0);
-                p.EquipoPrestamo = GetEquipoById(dr.GetInt32(1));
-                p.UbicacionPrestamo = GetUbicacionById(dr.GetInt32(2));
-                p.UsuarioPrestamo = GetUsuarioById(dr.GetInt32(3));
-                p.ProfesorPrestamo = GetProfesorById(dr.GetInt32(4));
-                p.TipoEquipoPrestamo = GetTipoEquipoById(dr.GetInt32(5));
-                p.FechaPrestamo = dr.GetString(6);
-                p.EstadoPrestamo = dr.GetString(7);
-                p.HoraInicio = dr.GetString(8);
-                p.HoraFin = dr.GetString(9);
+                Prestamo p = new Prestamo
+                {
+                    IdPrestamo = dr.GetInt32(0),
+                    EquipoPrestamo = GetEquipoById(dr.GetInt32(1)),
+                    UbicacionPrestamo = GetUbicacionById(dr.GetInt32(2)),
+                    UsuarioPrestamo = GetUsuarioById(dr.GetInt32(3)),
+                    ProfesorPrestamo = GetProfesorById(dr.GetInt32(4)),
+                    TipoEquipoPrestamo = GetTipoEquipoById(dr.GetInt32(5)),
+                    FechaPrestamo = dr.GetString(6),
+                    EstadoPrestamo = dr.GetString(7),
+                    HoraInicio = dr.GetString(8),
+                    HoraFin = dr.GetString(9)
+                };
                 lista.Add(p);
             }
             return lista;
@@ -132,6 +154,29 @@ namespace WF_Prestamo.Persistencia
 
             return e;
 
+        }
+        public static List<Prestamo> GetAllAct()
+        {
+            List<Prestamo> lista = new List<Prestamo>();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT idPrestamo, idEquipo, idUbicacion, idUsuario, idProfesor, idTipoEquipo, FechaPrestamo, EstadoPrestamo,HoraInicio,HoraFin FROM Prestamo WHERE EstadoPrestamo = 'Aceptado' OR 'Pendiente'");
+            cmd.Connection = Conexion.Connection;
+            SQLiteDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Prestamo p = new Prestamo();
+                p.IdPrestamo = dr.GetInt32(0);
+                p.EquipoPrestamo = GetEquipoById(dr.GetInt32(1));
+                p.UbicacionPrestamo = GetUbicacionById(dr.GetInt32(2));
+                p.UsuarioPrestamo = GetUsuarioById(dr.GetInt32(3));
+                p.ProfesorPrestamo = GetProfesorById(dr.GetInt32(4));
+                p.TipoEquipoPrestamo = GetTipoEquipoById(dr.GetInt32(5));
+                p.FechaPrestamo = dr.GetString(6);
+                p.EstadoPrestamo = dr.GetString(7);
+                p.HoraInicio = dr.GetString(8);
+                p.HoraFin = dr.GetString(9);
+                lista.Add(p);
+            }
+            return lista;
         }
 
         public static TipoEquipo GetTipoEquipoById(int id)

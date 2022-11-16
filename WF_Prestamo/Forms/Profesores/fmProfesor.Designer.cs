@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.dataProfesores = new System.Windows.Forms.DataGridView();
             this.ModificarProfesor = new System.Windows.Forms.Button();
             this.BajaProfesor = new System.Windows.Forms.Button();
@@ -51,45 +48,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dataProfesores);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(0, -12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(252, 450);
+            this.groupBox1.Size = new System.Drawing.Size(252, 462);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profesor";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(472, 111);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(472, 82);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(472, 53);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // dataProfesores
             // 
@@ -98,13 +67,14 @@
             this.dataProfesores.AllowUserToResizeColumns = false;
             this.dataProfesores.AllowUserToResizeRows = false;
             this.dataProfesores.AutoGenerateColumns = false;
+            this.dataProfesores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataProfesores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataProfesores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataProfesores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn});
             this.dataProfesores.DataSource = this.profesorBindingSource;
-            this.dataProfesores.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataProfesores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataProfesores.Location = new System.Drawing.Point(3, 16);
             this.dataProfesores.Name = "dataProfesores";
             this.dataProfesores.ReadOnly = true;
@@ -113,7 +83,7 @@
             this.dataProfesores.ShowCellErrors = false;
             this.dataProfesores.ShowCellToolTips = false;
             this.dataProfesores.ShowEditingIcon = false;
-            this.dataProfesores.Size = new System.Drawing.Size(244, 431);
+            this.dataProfesores.Size = new System.Drawing.Size(246, 443);
             this.dataProfesores.TabIndex = 0;
             this.dataProfesores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataProfesores_CellContentClick);
             // 
@@ -149,13 +119,13 @@
             // 
             // altaBajaModificacion
             // 
+            this.altaBajaModificacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.altaBajaModificacion.Controls.Add(this.btnAltaProfe);
             this.altaBajaModificacion.Controls.Add(this.ModificarProfesor);
             this.altaBajaModificacion.Controls.Add(this.BajaProfesor);
-            this.altaBajaModificacion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.altaBajaModificacion.Location = new System.Drawing.Point(265, 0);
+            this.altaBajaModificacion.Location = new System.Drawing.Point(251, 0);
             this.altaBajaModificacion.Name = "altaBajaModificacion";
-            this.altaBajaModificacion.Size = new System.Drawing.Size(197, 450);
+            this.altaBajaModificacion.Size = new System.Drawing.Size(211, 450);
             this.altaBajaModificacion.TabIndex = 8;
             this.altaBajaModificacion.TabStop = false;
             this.altaBajaModificacion.Text = "ABM";
@@ -207,15 +177,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.BindingSource profesorBindingSource;
         private System.Windows.Forms.BindingSource ubicacionBindingSource;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridView dataProfesores;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button ModificarProfesor;
         private System.Windows.Forms.Button BajaProfesor;
         private System.Windows.Forms.Button btnAltaProfe;
         private System.Windows.Forms.GroupBox altaBajaModificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
     }
 }

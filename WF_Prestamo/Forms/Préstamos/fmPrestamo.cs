@@ -17,6 +17,7 @@ namespace WF_Prestamo.Forms.Préstamos
         {
             InitializeComponent();
             prestamoBindingSource.DataSource = pPrestamo.GetAll();
+            prestamoBindingSource1.DataSource = pPrestamo.GetAllAct();
         }
 
         private void dataPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,6 +38,11 @@ namespace WF_Prestamo.Forms.Préstamos
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

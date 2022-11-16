@@ -59,10 +59,11 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.usuarioBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(253, 341);
+            this.dataGridView1.Size = new System.Drawing.Size(270, 397);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -70,9 +71,10 @@
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 37);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Location = new System.Drawing.Point(0, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(276, 401);
+            this.groupBox1.Size = new System.Drawing.Size(276, 416);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -157,7 +159,7 @@
             // listarPréstamosToolStripMenuItem
             // 
             this.listarPréstamosToolStripMenuItem.Name = "listarPréstamosToolStripMenuItem";
-            this.listarPréstamosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarPréstamosToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.listarPréstamosToolStripMenuItem.Text = "Listar Préstamos";
             this.listarPréstamosToolStripMenuItem.Click += new System.EventHandler(this.listarPréstamosToolStripMenuItem_Click);
             // 
@@ -179,13 +181,15 @@
             // 
             // Usuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(307, 440);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

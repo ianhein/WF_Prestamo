@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WF_Prestamo.Entidades;
 
 namespace WF_Prestamo.Persistencia
@@ -43,6 +39,59 @@ namespace WF_Prestamo.Persistencia
                 usuarios.Add(u);
             }
             return usuarios;
+        }
+        public static Usuario GetByUser1(string user)
+        {
+
+            Usuario u = new Usuario();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * from Usuario where User = @user ");
+            cmd.Parameters.Add(new SQLiteParameter("@user", user));
+            //cmd.Parameters.Add(new SQLiteParameter("@password", password));
+            cmd.Connection = Conexion.Connection;
+            SQLiteDataReader obdr = cmd.ExecuteReader();
+
+            while (obdr.Read())
+            {                
+                u.User = obdr.GetString(1);
+                u.Password = obdr.GetString(2);                
+            }
+            return u;
+        }
+
+        public static List<Usuario> GetByUserList(string user)
+        {
+
+            List<Usuario> usuarios = new List<Usuario>();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * from Usuario where User = @user ;");
+            cmd.Parameters.Add(new SQLiteParameter("@user", user));
+            cmd.Connection = Conexion.Connection;
+            SQLiteDataReader obdr = cmd.ExecuteReader();
+
+            while (obdr.Read())
+            {
+                Usuario u = new Usuario();
+                u.User = obdr.GetString(1);
+
+                usuarios.Add(u);
+            }
+            return usuarios;
+        }
+
+        public static Usuario GetByUserOnly(string user)
+        {
+
+            Usuario u = new Usuario();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * from Usuario where User = @user;");
+            cmd.Parameters.Add(new SQLiteParameter("@user", user));
+            cmd.Connection = Conexion.Connection;
+            SQLiteDataReader obdr = cmd.ExecuteReader();
+
+            while (obdr.Read())
+            {
+                u.User = obdr.GetString(1);
+                u.Password = obdr.GetString(2);
+            }
+            return u;
         }
         public static void Update(Usuario us, int idUsuario)
         {

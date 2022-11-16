@@ -11,6 +11,8 @@ namespace WF_Prestamo
     internal static class Program
     {
         public static string user;
+        public static string passwd;
+
         ///conmas
         /// <summary>s
         /// The main entry point for the application.
