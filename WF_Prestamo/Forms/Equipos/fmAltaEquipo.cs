@@ -43,16 +43,12 @@ namespace WF_Prestamo.Forms.Equipos
             eq.NombreEquipo= btnAlta.Text;
             int id = ((TipoEquipo)tipoEquipoBindingSource.Current).Id;
             pEquipo.Save(eq, id);
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = Convert.ToInt32(cbTipoEquipo.SelectedValue);
             equipoBindingSource.DataSource = pEquipo.GetById(i);
-
-
         }
 
         private void btnAlta_TextChanged(object sender, EventArgs e)

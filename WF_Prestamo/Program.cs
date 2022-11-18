@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WF_Prestamo.Forms;
 using WF_Prestamo.Persistencia;
+using WF_Prestamo.Test;
 
 namespace WF_Prestamo
 {
@@ -23,7 +24,7 @@ namespace WF_Prestamo
             Conexion.OpenConexion();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new login());
             Conexion.Connection.Close();
 
         }
