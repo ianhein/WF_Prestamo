@@ -43,6 +43,7 @@ namespace WF_Prestamo.Test
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.lblerrormsg = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
@@ -197,12 +198,27 @@ namespace WF_Prestamo.Test
             this.btnminimizar.TabStop = false;
             this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
             // 
+            // lblerrormsg
+            // 
+            this.lblerrormsg.AutoSize = true;
+            this.lblerrormsg.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerrormsg.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblerrormsg.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblerrormsg.Location = new System.Drawing.Point(309, 192);
+            this.lblerrormsg.Name = "lblerrormsg";
+            this.lblerrormsg.Size = new System.Drawing.Size(62, 15);
+            this.lblerrormsg.TabIndex = 9;
+            this.lblerrormsg.Text = "Msg error";
+            this.lblerrormsg.Visible = false;
+            this.lblerrormsg.Click += new System.EventHandler(this.label2_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(40)))), ((int)(((byte)(71)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.lblerrormsg);
             this.Controls.Add(this.btnminimizar);
             this.Controls.Add(this.btncerrar);
             this.Controls.Add(this.linkLabel1);
@@ -215,9 +231,11 @@ namespace WF_Prestamo.Test
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "login";
             this.Opacity = 0.9D;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.login_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
@@ -241,5 +259,6 @@ namespace WF_Prestamo.Test
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox btnminimizar;
+        private System.Windows.Forms.Label lblerrormsg;
     }
 }

@@ -11,7 +11,8 @@ using WF_Prestamo.Forms;
 using WF_Prestamo.Persistencia;
 using WF_Prestamo.Entidades;
 using System.Security.Cryptography;
-
+using System.Runtime.InteropServices;
+using WF_Prestamo.Test;
 namespace WF_Prestamo.Test
 {
     public partial class login : Form
@@ -21,6 +22,23 @@ namespace WF_Prestamo.Test
             InitializeComponent();
         }
 
+        #region Drag Form/ Mover Arrastrar Formulario
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        private void login_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
 
         private void btnlogin_EnabledChanged(object sender, EventArgs e)
         {
@@ -85,17 +103,15 @@ namespace WF_Prestamo.Test
 
             if (txtuser.Text == "USUARIO" || txtpass.Text == "CONTRASEÑA" || txtuser.Text == "" || txtpass.Text == "")
             {
-                login.ActiveForm.Hide();
-                MessageBox.Show("Ingrese Usuario y Contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                new login().Show();
+                errormsg("Ingrese Usuario y Contraseña");
+                
+                /*MessageBox.Show("Ingrese Usuario y Contraseña", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);*/
             }
             else
             {
                 if (u == null)
                 {
-                    login.ActiveForm.Hide();
-                    MessageBox.Show("Usuario incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    new login().Show();
+                    errormsg("Usuario no existe");
 
                 }
                 else
@@ -104,16 +120,15 @@ namespace WF_Prestamo.Test
                     {
                         MessageBox.Show("Bienvenido, " + u.NombreUsuario, "Usuario correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        Usuarios mp = new Usuarios();
-                        mp.ShowDialog();
+                        /*Usuarios mp = new Usuarios();
+                        mp.ShowDialog();*/
+                        Main m = new Main();
+                        m.Show();
+
                     }
                     else
                     {
-
-                        login.ActiveForm.Hide();
-                        MessageBox.Show("Contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        new login().Show();
-
+                        errormsg("Contraseña incorrecta");
                     }
                 }
             }
@@ -134,12 +149,12 @@ namespace WF_Prestamo.Test
             {
                 if (u.User == a.User)
                 {
-                    MessageBox.Show("El usuario ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errormsg("El usuario ya existe");
                     return;
                 }
                 if (u.User == "" || u.Password == "" || u.User == "USUARIO" || u.Password == "CONTRASEÑA")
                 {
-                    MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errormsg("Debe completar todos los campos");
                     return;
                 }
 
@@ -147,6 +162,7 @@ namespace WF_Prestamo.Test
             if (txtuser.Text != "" && txtpass.Text != "")
             {
                 pUsuario.Save(u);
+                
                 MessageBox.Show("Se ha registrado Correctamente!");
             }
             else { MessageBox.Show("No puede dejar campos vacios!", "Error"); }
@@ -199,6 +215,12 @@ namespace WF_Prestamo.Test
             Ingresar();
         }
 
+        private void errormsg(string msg)
+        {
+            lblerrormsg.Text = msg;
+            lblerrormsg.Visible = true;
+            lblerrormsg.ForeColor = Color.Red;
+        }
 
 
         private void txtuser_TextChanged(object sender, EventArgs e)
@@ -211,7 +233,9 @@ namespace WF_Prestamo.Test
 
         }
 
-        
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
     }
 
 }

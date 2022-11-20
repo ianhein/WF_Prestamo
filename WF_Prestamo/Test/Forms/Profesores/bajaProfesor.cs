@@ -7,40 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WF_Prestamo.Persistencia;
 using WF_Prestamo.Entidades;
+using WF_Prestamo.Persistencia;
 
-namespace WF_Prestamo.Forms
+namespace WF_Prestamo.Test.Forms
 {
-    public partial class fmModificarProfesor : Form
+    public partial class bajaProfesor : Form
     {
-        public fmModificarProfesor(int id)
+        public bajaProfesor(int id)
         {
             InitializeComponent();
             Conexion.OpenConexion();
             profesorBindingSource.Add(pProfesor.GetById(id));
-            Conexion.CloseConexion();
+
         }
 
-        public fmModificarProfesor(Profesor p)
+        public bajaProfesor(Profesor p)
         {
             InitializeComponent();
             profesorBindingSource.Add(p);
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Conexion.OpenConexion();
-            pProfesor.Update((Profesor)profesorBindingSource.Current);
+            pProfesor.Delete((Profesor)profesorBindingSource.Current);
             pProfesor.GetAll();
             Conexion.CloseConexion();
             Close();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -48,24 +47,9 @@ namespace WF_Prestamo.Forms
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ModificarProfesor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void profesorBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

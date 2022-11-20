@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ModificarProfeNombre = new System.Windows.Forms.Label();
             this.ModificarProfeApellido = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.profesorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,10 +48,6 @@
             this.textBox1.Size = new System.Drawing.Size(145, 20);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // profesorBindingSource
-            // 
-            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
             // 
             // textBox2
             // 
@@ -107,6 +103,11 @@
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "ID;";
+            // 
+            // profesorBindingSource
+            // 
+            this.profesorBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Profesor);
+            this.profesorBindingSource.CurrentChanged += new System.EventHandler(this.profesorBindingSource_CurrentChanged);
             // 
             // fmModificarProfesor
             // 

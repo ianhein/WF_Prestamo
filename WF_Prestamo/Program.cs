@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WF_Prestamo.Forms;
 using WF_Prestamo.Persistencia;
+using WF_Prestamo.Test.Forms;
 using WF_Prestamo.Test;
+using WF_Prestamo.Forms.Equipos;
 
 namespace WF_Prestamo
 {

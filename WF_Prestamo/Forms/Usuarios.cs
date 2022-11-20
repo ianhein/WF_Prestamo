@@ -72,8 +72,6 @@ namespace WF_Prestamo.Forms
         private void listarProfesoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Conexion.OpenConexion();
-            fmProfesor u = new fmProfesor();
-            u.ShowDialog();
         }
 
         private void listarUbicacionesToolStripMenuItem_Click(object sender, EventArgs e)

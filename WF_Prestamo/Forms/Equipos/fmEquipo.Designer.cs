@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataEquipo = new System.Windows.Forms.DataGridView();
+            this.nombreEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@
             this.btnAltaEquipo = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nombreEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoEquipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataEquipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipoBindingSource)).BeginInit();
@@ -81,6 +81,21 @@
             this.dataEquipo.TabIndex = 0;
             this.dataEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // nombreEquipoDataGridViewTextBoxColumn
+            // 
+            this.nombreEquipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreEquipoDataGridViewTextBoxColumn.DataPropertyName = "NombreEquipo";
+            this.nombreEquipoDataGridViewTextBoxColumn.HeaderText = "Nombre Equipo";
+            this.nombreEquipoDataGridViewTextBoxColumn.Name = "nombreEquipoDataGridViewTextBoxColumn";
+            this.nombreEquipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoEquipoDataGridViewTextBoxColumn
+            // 
+            this.tipoEquipoDataGridViewTextBoxColumn.DataPropertyName = "TipoEquipo";
+            this.tipoEquipoDataGridViewTextBoxColumn.HeaderText = "Tipo Equipo";
+            this.tipoEquipoDataGridViewTextBoxColumn.Name = "tipoEquipoDataGridViewTextBoxColumn";
+            this.tipoEquipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // equipoBindingSource
             // 
             this.equipoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Equipo);
@@ -97,6 +112,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ABM";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btnModificar
             // 
@@ -136,21 +152,6 @@
             // prestamoBindingSource
             // 
             this.prestamoBindingSource.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
-            // 
-            // nombreEquipoDataGridViewTextBoxColumn
-            // 
-            this.nombreEquipoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreEquipoDataGridViewTextBoxColumn.DataPropertyName = "NombreEquipo";
-            this.nombreEquipoDataGridViewTextBoxColumn.HeaderText = "Nombre Equipo";
-            this.nombreEquipoDataGridViewTextBoxColumn.Name = "nombreEquipoDataGridViewTextBoxColumn";
-            this.nombreEquipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoEquipoDataGridViewTextBoxColumn
-            // 
-            this.tipoEquipoDataGridViewTextBoxColumn.DataPropertyName = "TipoEquipo";
-            this.tipoEquipoDataGridViewTextBoxColumn.HeaderText = "Tipo Equipo";
-            this.tipoEquipoDataGridViewTextBoxColumn.Name = "tipoEquipoDataGridViewTextBoxColumn";
-            this.tipoEquipoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fmEquipo
             // 

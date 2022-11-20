@@ -54,7 +54,7 @@
             this.groupBox1.Controls.Add(this.dataProfesores);
             this.groupBox1.Location = new System.Drawing.Point(0, -12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(252, 462);
+            this.groupBox1.Size = new System.Drawing.Size(525, 424);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profesor";
@@ -83,7 +83,7 @@
             this.dataProfesores.ShowCellErrors = false;
             this.dataProfesores.ShowCellToolTips = false;
             this.dataProfesores.ShowEditingIcon = false;
-            this.dataProfesores.Size = new System.Drawing.Size(246, 443);
+            this.dataProfesores.Size = new System.Drawing.Size(519, 405);
             this.dataProfesores.TabIndex = 0;
             this.dataProfesores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataProfesores_CellContentClick);
             // 
@@ -123,7 +123,7 @@
             this.altaBajaModificacion.Controls.Add(this.btnAltaProfe);
             this.altaBajaModificacion.Controls.Add(this.ModificarProfesor);
             this.altaBajaModificacion.Controls.Add(this.BajaProfesor);
-            this.altaBajaModificacion.Location = new System.Drawing.Point(251, 0);
+            this.altaBajaModificacion.Location = new System.Drawing.Point(524, 0);
             this.altaBajaModificacion.Name = "altaBajaModificacion";
             this.altaBajaModificacion.Size = new System.Drawing.Size(211, 450);
             this.altaBajaModificacion.TabIndex = 8;
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 450);
+            this.ClientSize = new System.Drawing.Size(735, 412);
             this.Controls.Add(this.altaBajaModificacion);
             this.Controls.Add(this.groupBox1);
             this.Name = "fmProfesor";

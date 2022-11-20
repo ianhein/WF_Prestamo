@@ -10,22 +10,26 @@ using System.Windows.Forms;
 using WF_Prestamo.Persistencia;
 using WF_Prestamo.Entidades;
 
-namespace WF_Prestamo.Forms
+namespace WF_Prestamo.Test.Forms
 {
-    public partial class fmModificarProfesor : Form
+    public partial class modificarProfesor : Form
     {
-        public fmModificarProfesor(int id)
+        public modificarProfesor(int id)
         {
             InitializeComponent();
             Conexion.OpenConexion();
             profesorBindingSource.Add(pProfesor.GetById(id));
             Conexion.CloseConexion();
         }
-
-        public fmModificarProfesor(Profesor p)
+        public modificarProfesor(Profesor p)
         {
             InitializeComponent();
             profesorBindingSource.Add(p);
+        }
+
+
+        private void textNombreP_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
@@ -38,32 +42,12 @@ namespace WF_Prestamo.Forms
             Close();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ModificarProfesor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void profesorBindingSource_CurrentChanged(object sender, EventArgs e)
+        private void textApellidoP_TextChanged(object sender, EventArgs e)
         {
 
         }

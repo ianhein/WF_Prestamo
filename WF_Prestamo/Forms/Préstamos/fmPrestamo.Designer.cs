@@ -31,6 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fechaPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profesorPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ubicacionPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEquipoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prestamoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,31 +79,21 @@
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profesorPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ubicacionPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoEquipoPrestamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prestamoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 0);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(693, 565);
+            this.groupBox1.Size = new System.Drawing.Size(880, 557);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Préstamos";
@@ -121,9 +121,84 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(684, 530);
+            this.dataGridView1.Size = new System.Drawing.Size(684, 412);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // fechaPrestamoDataGridViewTextBoxColumn
+            // 
+            this.fechaPrestamoDataGridViewTextBoxColumn.DataPropertyName = "FechaPrestamo";
+            this.fechaPrestamoDataGridViewTextBoxColumn.HeaderText = "Fecha Prestamo";
+            this.fechaPrestamoDataGridViewTextBoxColumn.Name = "fechaPrestamoDataGridViewTextBoxColumn";
+            this.fechaPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // horaInicioDataGridViewTextBoxColumn
+            // 
+            this.horaInicioDataGridViewTextBoxColumn.DataPropertyName = "HoraInicio";
+            this.horaInicioDataGridViewTextBoxColumn.HeaderText = "Hora Inicio";
+            this.horaInicioDataGridViewTextBoxColumn.Name = "horaInicioDataGridViewTextBoxColumn";
+            this.horaInicioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.horaInicioDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // horaFinDataGridViewTextBoxColumn
+            // 
+            this.horaFinDataGridViewTextBoxColumn.DataPropertyName = "HoraFin";
+            this.horaFinDataGridViewTextBoxColumn.HeaderText = "Hora Fin";
+            this.horaFinDataGridViewTextBoxColumn.Name = "horaFinDataGridViewTextBoxColumn";
+            this.horaFinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.horaFinDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // estadoPrestamoDataGridViewTextBoxColumn
+            // 
+            this.estadoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "EstadoPrestamo";
+            this.estadoPrestamoDataGridViewTextBoxColumn.HeaderText = "Estado Prestamo";
+            this.estadoPrestamoDataGridViewTextBoxColumn.Name = "estadoPrestamoDataGridViewTextBoxColumn";
+            this.estadoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoPrestamoDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // equipoPrestamoDataGridViewTextBoxColumn
+            // 
+            this.equipoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "EquipoPrestamo";
+            this.equipoPrestamoDataGridViewTextBoxColumn.HeaderText = "Equipo Prestamo";
+            this.equipoPrestamoDataGridViewTextBoxColumn.Name = "equipoPrestamoDataGridViewTextBoxColumn";
+            this.equipoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.equipoPrestamoDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // profesorPrestamoDataGridViewTextBoxColumn
+            // 
+            this.profesorPrestamoDataGridViewTextBoxColumn.DataPropertyName = "ProfesorPrestamo";
+            this.profesorPrestamoDataGridViewTextBoxColumn.HeaderText = "Profesor Prestamo";
+            this.profesorPrestamoDataGridViewTextBoxColumn.Name = "profesorPrestamoDataGridViewTextBoxColumn";
+            this.profesorPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.profesorPrestamoDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // ubicacionPrestamoDataGridViewTextBoxColumn
+            // 
+            this.ubicacionPrestamoDataGridViewTextBoxColumn.DataPropertyName = "UbicacionPrestamo";
+            this.ubicacionPrestamoDataGridViewTextBoxColumn.HeaderText = "Ubicacion Prestamo";
+            this.ubicacionPrestamoDataGridViewTextBoxColumn.Name = "ubicacionPrestamoDataGridViewTextBoxColumn";
+            this.ubicacionPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ubicacionPrestamoDataGridViewTextBoxColumn.Width = 116;
+            // 
+            // usuarioPrestamoDataGridViewTextBoxColumn
+            // 
+            this.usuarioPrestamoDataGridViewTextBoxColumn.DataPropertyName = "UsuarioPrestamo";
+            this.usuarioPrestamoDataGridViewTextBoxColumn.HeaderText = "Usuario Prestamo";
+            this.usuarioPrestamoDataGridViewTextBoxColumn.Name = "usuarioPrestamoDataGridViewTextBoxColumn";
+            this.usuarioPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usuarioPrestamoDataGridViewTextBoxColumn.Width = 106;
+            // 
+            // tipoEquipoPrestamoDataGridViewTextBoxColumn
+            // 
+            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "TipoEquipoPrestamo";
+            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.HeaderText = "Tipo Equipo Prestamo";
+            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.Name = "tipoEquipoPrestamoDataGridViewTextBoxColumn";
+            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.Width = 124;
+            // 
+            // prestamoBindingSource1
+            // 
+            this.prestamoBindingSource1.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
             // 
             // prestamoBindingSource
             // 
@@ -131,14 +206,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.AutoSize = true;
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(693, 0);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox2.Location = new System.Drawing.Point(736, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(174, 542);
+            this.groupBox2.Size = new System.Drawing.Size(144, 557);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ABM";
@@ -382,87 +457,12 @@
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             this.dataGridViewTextBoxColumn33.ReadOnly = true;
             // 
-            // fechaPrestamoDataGridViewTextBoxColumn
-            // 
-            this.fechaPrestamoDataGridViewTextBoxColumn.DataPropertyName = "FechaPrestamo";
-            this.fechaPrestamoDataGridViewTextBoxColumn.HeaderText = "Fecha Prestamo";
-            this.fechaPrestamoDataGridViewTextBoxColumn.Name = "fechaPrestamoDataGridViewTextBoxColumn";
-            this.fechaPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // horaInicioDataGridViewTextBoxColumn
-            // 
-            this.horaInicioDataGridViewTextBoxColumn.DataPropertyName = "HoraInicio";
-            this.horaInicioDataGridViewTextBoxColumn.HeaderText = "Hora Inicio";
-            this.horaInicioDataGridViewTextBoxColumn.Name = "horaInicioDataGridViewTextBoxColumn";
-            this.horaInicioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.horaInicioDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // horaFinDataGridViewTextBoxColumn
-            // 
-            this.horaFinDataGridViewTextBoxColumn.DataPropertyName = "HoraFin";
-            this.horaFinDataGridViewTextBoxColumn.HeaderText = "Hora Fin";
-            this.horaFinDataGridViewTextBoxColumn.Name = "horaFinDataGridViewTextBoxColumn";
-            this.horaFinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.horaFinDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // estadoPrestamoDataGridViewTextBoxColumn
-            // 
-            this.estadoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "EstadoPrestamo";
-            this.estadoPrestamoDataGridViewTextBoxColumn.HeaderText = "Estado Prestamo";
-            this.estadoPrestamoDataGridViewTextBoxColumn.Name = "estadoPrestamoDataGridViewTextBoxColumn";
-            this.estadoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoPrestamoDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // equipoPrestamoDataGridViewTextBoxColumn
-            // 
-            this.equipoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "EquipoPrestamo";
-            this.equipoPrestamoDataGridViewTextBoxColumn.HeaderText = "Equipo Prestamo";
-            this.equipoPrestamoDataGridViewTextBoxColumn.Name = "equipoPrestamoDataGridViewTextBoxColumn";
-            this.equipoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.equipoPrestamoDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // profesorPrestamoDataGridViewTextBoxColumn
-            // 
-            this.profesorPrestamoDataGridViewTextBoxColumn.DataPropertyName = "ProfesorPrestamo";
-            this.profesorPrestamoDataGridViewTextBoxColumn.HeaderText = "Profesor Prestamo";
-            this.profesorPrestamoDataGridViewTextBoxColumn.Name = "profesorPrestamoDataGridViewTextBoxColumn";
-            this.profesorPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.profesorPrestamoDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // ubicacionPrestamoDataGridViewTextBoxColumn
-            // 
-            this.ubicacionPrestamoDataGridViewTextBoxColumn.DataPropertyName = "UbicacionPrestamo";
-            this.ubicacionPrestamoDataGridViewTextBoxColumn.HeaderText = "Ubicacion Prestamo";
-            this.ubicacionPrestamoDataGridViewTextBoxColumn.Name = "ubicacionPrestamoDataGridViewTextBoxColumn";
-            this.ubicacionPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ubicacionPrestamoDataGridViewTextBoxColumn.Width = 116;
-            // 
-            // usuarioPrestamoDataGridViewTextBoxColumn
-            // 
-            this.usuarioPrestamoDataGridViewTextBoxColumn.DataPropertyName = "UsuarioPrestamo";
-            this.usuarioPrestamoDataGridViewTextBoxColumn.HeaderText = "Usuario Prestamo";
-            this.usuarioPrestamoDataGridViewTextBoxColumn.Name = "usuarioPrestamoDataGridViewTextBoxColumn";
-            this.usuarioPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.usuarioPrestamoDataGridViewTextBoxColumn.Width = 106;
-            // 
-            // tipoEquipoPrestamoDataGridViewTextBoxColumn
-            // 
-            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.DataPropertyName = "TipoEquipoPrestamo";
-            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.HeaderText = "Tipo Equipo Prestamo";
-            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.Name = "tipoEquipoPrestamoDataGridViewTextBoxColumn";
-            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoEquipoPrestamoDataGridViewTextBoxColumn.Width = 124;
-            // 
-            // prestamoBindingSource1
-            // 
-            this.prestamoBindingSource1.DataSource = typeof(WF_Prestamo.Entidades.Prestamo);
-            // 
             // fmPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(868, 542);
+            this.ClientSize = new System.Drawing.Size(880, 557);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "fmPrestamo";
@@ -471,9 +471,9 @@
             this.Text = "Préstamo";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

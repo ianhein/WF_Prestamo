@@ -41,5 +41,10 @@ namespace WF_Prestamo.Forms.Equipos
             Conexion.OpenConexion();
             equipoBindingSource.DataSource = pEquipo.GetAll();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace WF_Prestamo.Persistencia
         public static void Update(Profesor p)
         {
             //Creo script SQL a utilizar
-            SQLiteCommand cmd = new SQLiteCommand("UPDATE Profesor SET Nombre = @nombre, idProfesor = @idProfesor, Apellido=@apellido WHERE idProfesor= @idProfesor;");
+            SQLiteCommand cmd = new SQLiteCommand("UPDATE Profesor SET Nombre = @nombre, Apellido=@apellido, idProfesor = @idProfesor WHERE idProfesor= @idProfesor;");
             //Cargo parametros
             cmd.Parameters.Add(new SQLiteParameter("@nombre", p.Nombre));
             cmd.Parameters.Add(new SQLiteParameter("@apellido", p.Apellido));

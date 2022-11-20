@@ -63,5 +63,10 @@ namespace WF_Prestamo.Forms.Ubicaciones
             Conexion.OpenConexion();
             ubicacionBindingSource.DataSource = pUbicacion.GetAll();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
