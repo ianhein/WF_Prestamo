@@ -34,9 +34,10 @@ namespace WF_Prestamo.Persistencia
 
         }
 
-        public static void Update(Prestamo p, int idEquipo, int idUbicacion, int idUsuario, int idProfesor, int idTipoEquipo)
+        //update prestamos
+        public static void Update(Prestamo p, int idProfesor, int idUbicacion, int idEquipo,  int idUsuario, int idTipoEquipo)
         {
-            SQLiteCommand cmd = new SQLiteCommand("UPDATE Prestamo SET idEquipo= @idEquipo, idUbicacion= @idUbicacion, idUsuario= @idUsuario, idProfesor= @idProfesor, idTipoEquipo= @idTipoEquipo, FechaPrestamo= @FechaPrestamo, EstadoPrestamo= @EstadoPrestamo, HoraInicio= @HoraInicio, HoraFin= @HoraFin WHERE idPrestamo= @idPrestamo;");
+            SQLiteCommand cmd = new SQLiteCommand("UPDATE Prestamo SET idEquipo = @idEquipo, idUbicacion = @idUbicacion, idUsuario = @idUsuario, idProfesor = @idProfesor, idTipoEquipo = @idTipoEquipo, FechaPrestamo = @FechaPrestamo, EstadoPrestamo = @EstadoPrestamo, HoraInicio = @HoraInicio, HoraFin = @HoraFin WHERE idPrestamo = @idPrestamo;");
             //Cargo parametros
             cmd.Parameters.Add(new SQLiteParameter("@idEquipo", idEquipo));
             cmd.Parameters.Add(new SQLiteParameter("@idUbicacion", idUbicacion));
@@ -47,7 +48,7 @@ namespace WF_Prestamo.Persistencia
             cmd.Parameters.Add(new SQLiteParameter("@EstadoPrestamo", p.EstadoPrestamo));
             cmd.Parameters.Add(new SQLiteParameter("@HoraInicio", p.HoraInicio));
             cmd.Parameters.Add(new SQLiteParameter("@HoraFin", p.HoraFin));
-
+            cmd.Parameters.Add(new SQLiteParameter("@idPrestamo", p.IdPrestamo));
             //asigno conexion
             cmd.Connection = Conexion.Connection;
             cmd.ExecuteNonQuery();
@@ -197,8 +198,6 @@ namespace WF_Prestamo.Persistencia
 
 
             }
-
-
             return p;
         }
 
@@ -222,13 +221,13 @@ namespace WF_Prestamo.Persistencia
                 p.EstadoPrestamo = reader.GetString(6);
                 p.HoraInicio = reader.GetString(7);
                 p.HoraFin = reader.GetString(8);
+                p.TipoEquipoPrestamo = p.EquipoPrestamo.TipoEquipo;
             }
             return p;
         }
      
-        public static void Cancelar(Prestamo p)
+        public static void FinalizarPrestamo(Prestamo p)
         {
-            
             //Creo script SQL a utilizar
             SQLiteCommand cmd = new SQLiteCommand("UPDATE idPrestamo FROM Prestamo WHERE idPrestamo = @idPrestamo");
 
@@ -240,9 +239,7 @@ namespace WF_Prestamo.Persistencia
             while (reader.Read())
             {
 
-
                 p.EstadoPrestamo = "Cancelado";
-
 
             }
 

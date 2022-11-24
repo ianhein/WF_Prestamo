@@ -63,8 +63,7 @@ namespace WF_Prestamo.Forms.Equipos
             eq.Id = Convert.ToInt32(txtId.Text);
             eq.NombreEquipo = txtNombre.Text;
             eq.TipoEquipo = te;
-            pEquipo.Delete(eq.Id);
-
+            pEquipo.Delete(eq);
 
         }
 

@@ -93,6 +93,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(145, 20);
             this.textBox2.TabIndex = 12;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -128,6 +129,7 @@
             this.Name = "fmModificarUbicacion";
             this.ShowIcon = false;
             this.Text = "Modificar Ubicacion";
+            this.Load += new System.EventHandler(this.fmModificarUbicacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
             this.ResumeLayout(false);

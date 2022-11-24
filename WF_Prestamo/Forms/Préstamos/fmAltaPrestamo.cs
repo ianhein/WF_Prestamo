@@ -140,5 +140,10 @@ namespace WF_Prestamo.Forms.Préstamos
         {
 
         }
+
+        private void fmAltaPrestamo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

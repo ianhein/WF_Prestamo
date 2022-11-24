@@ -145,7 +145,7 @@
             this.comboBoxUbicacion.Name = "comboBoxUbicacion";
             this.comboBoxUbicacion.Size = new System.Drawing.Size(197, 21);
             this.comboBoxUbicacion.TabIndex = 7;
-            this.comboBoxUbicacion.ValueMember = "Id";
+            this.comboBoxUbicacion.ValueMember = "IdUbicacion";
             // 
             // ubicacionBindingSource
             // 
@@ -339,6 +339,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "fmAltaPrestamo";
             this.Text = "fmAltaPrestamo";
+            this.Load += new System.EventHandler(this.fmAltaPrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profesorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ubicacionBindingSource)).EndInit();

@@ -40,6 +40,22 @@ namespace WF_Prestamo.Persistencia
             }
             return usuarios;
         }
+
+        public static Usuario GetById(int id)
+        {
+            Usuario u = new Usuario();
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * from Usuario where idUser = @id;");
+            cmd.Parameters.Add(new SQLiteParameter("@id", id));
+            cmd.Connection = Conexion.Connection;
+            SQLiteDataReader obdr = cmd.ExecuteReader();
+
+            while (obdr.Read())
+            {
+                u.User = obdr.GetString(1);
+                u.Password = obdr.GetString(2);
+            }
+            return u;
+        }
         public static Usuario GetByUser1(string user)
         {
 

@@ -51,5 +51,9 @@ namespace WF_Prestamo.Test.Forms.Ubicaciones
         {
             this.Close();
         }
+
+        private void modificarUbicacion_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

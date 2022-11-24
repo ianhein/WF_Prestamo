@@ -23,28 +23,30 @@ namespace WF_Prestamo.Persistencia
             cmd.ExecuteNonQuery();
         }
 
-        public static void Update(Equipo e)
+        public static void Update(Equipo e, int idTipoEquipo)
         {
             //Creo script SQL a utilizar
-            SQLiteCommand cmd = new SQLiteCommand("UPDATE Ubicacion  SET NombreEquipo= @Nombre, idEquipo= @idEquipo WHERE idEquipo= @idEquipo;");
+            SQLiteCommand cmd = new SQLiteCommand("UPDATE Equipo SET NombreEquipo = @NombreEquipo, idTipoEquipo = @idTipoEquipo WHERE IdEquipo = @IdEquipo");
             //Cargo parametros
-            cmd.Parameters.Add(new SQLiteParameter("@Nombre", e.NombreEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@NombreEquipo", e.NombreEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@idTipoEquipo", idTipoEquipo));
+            cmd.Parameters.Add(new SQLiteParameter("@IdEquipo", e.Id));
+            //asigno conexion
+            cmd.Connection = Conexion.Connection;
+            cmd.ExecuteNonQuery();
+        }
+        public static void Delete(Equipo e)
+        {
+            //Creo script SQL a utilizar
+            SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Equipo WHERE idEquipo= @idEquipo;");
+            //Cargo parametros
             cmd.Parameters.Add(new SQLiteParameter("@idEquipo", e.Id));
             //asigno conexion
             cmd.Connection = Conexion.Connection;
             cmd.ExecuteNonQuery();
         }
-        public static void Delete(int id)
-        {
-            //Creo script SQL a utilizar
-            SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Equipo WHERE idEquipo= @idEquipo;");
-            //Cargo parametros
-            cmd.Parameters.Add(new SQLiteParameter("@idEquipo", id));
-            //asigno conexion
-            cmd.Connection = Conexion.Connection;
-            cmd.ExecuteNonQuery();
-        }
         
+       
         /*public static List<TipoEquipo> GetTypeEquipList()
         {
             List<TipoEquipo> TipoEquipo = new List
@@ -54,7 +56,7 @@ namespace WF_Prestamo.Persistencia
 
             Equipo e = new Equipo();
             int AUX;
-            SQLiteCommand cmd = new SQLiteCommand("SELECT idEquipo, idTipoEquipo FROM Equipo WHERE idEquipo= @id");
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Equipo WHERE idEquipo= @id");
             cmd.Parameters.Add(new SQLiteParameter("@id", id));
             cmd.Connection = Conexion.Connection;
             //creo el datareader

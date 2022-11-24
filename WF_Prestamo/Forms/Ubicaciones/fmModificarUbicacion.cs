@@ -36,5 +36,15 @@ namespace WF_Prestamo.Forms.Ubicaciones
             Conexion.CloseConexion();
             Close();
         }
+
+        private void fmModificarUbicacion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

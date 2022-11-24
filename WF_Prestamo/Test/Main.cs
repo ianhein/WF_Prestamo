@@ -17,6 +17,7 @@ using WF_Prestamo.Forms.Préstamos;
 using WF_Prestamo.Forms.Equipos;
 using WF_Prestamo.Test.Forms.Equipos;
 using WF_Prestamo.Test.Forms.Ubicaciones;
+using WF_Prestamo.Test.Forms.Prestamos;
 using WF_Prestamo.Test.Forms;
 
 namespace WF_Prestamo.Test
@@ -130,7 +131,7 @@ namespace WF_Prestamo.Test
         private void iconPrestamo_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            openChild(new fmPrestamo());
+            openChild(new prestamoForm());
 
         }
 

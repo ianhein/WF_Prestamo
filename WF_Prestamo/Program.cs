@@ -8,6 +8,7 @@ using WF_Prestamo.Persistencia;
 using WF_Prestamo.Test.Forms;
 using WF_Prestamo.Test;
 using WF_Prestamo.Forms.Equipos;
+using WF_Prestamo.Forms.Préstamos;
 
 namespace WF_Prestamo
 {

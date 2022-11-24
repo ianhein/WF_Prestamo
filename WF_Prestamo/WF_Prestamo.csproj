@@ -252,6 +252,30 @@
     <Compile Include="Test\Forms\Equipos\modificarEquipos.Designer.cs">
       <DependentUpon>modificarEquipos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\Forms\Prestamos\altaPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\Forms\Prestamos\altaPrestamo.Designer.cs">
+      <DependentUpon>altaPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Forms\Prestamos\bajaPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\Forms\Prestamos\bajaPrestamo.Designer.cs">
+      <DependentUpon>bajaPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Forms\Prestamos\prestamoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\Forms\Prestamos\prestamoForm.Designer.cs">
+      <DependentUpon>prestamoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Forms\Prestamos\modificarPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\Forms\Prestamos\modificarPrestamo.Designer.cs">
+      <DependentUpon>modificarPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test\Forms\Profesores\bajaProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,8 +382,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Test\Forms\Equipos\bajaEquipos.resx">
+      <DependentUpon>bajaEquipos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Test\Forms\Equipos\EquiposForm.resx">
       <DependentUpon>EquiposForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\Forms\Equipos\modificarEquipos.resx">
+      <DependentUpon>modificarEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\Forms\Prestamos\altaPrestamo.resx">
+      <DependentUpon>altaPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\Forms\Prestamos\modificarPrestamo.resx">
+      <DependentUpon>modificarPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test\Forms\Prestamos\prestamoForm.resx">
+      <DependentUpon>prestamoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test\Forms\Profesores\bajaProfesor.resx">
       <DependentUpon>bajaProfesor.cs</DependentUpon>

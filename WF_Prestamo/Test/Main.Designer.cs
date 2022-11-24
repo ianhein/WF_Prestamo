@@ -184,7 +184,7 @@
             this.panelT.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelT.Location = new System.Drawing.Point(220, 0);
             this.panelT.Name = "panelT";
-            this.panelT.Size = new System.Drawing.Size(785, 59);
+            this.panelT.Size = new System.Drawing.Size(872, 59);
             this.panelT.TabIndex = 1;
             this.panelT.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelT_MouseDown);
             // 
@@ -219,7 +219,7 @@
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 59);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(785, 10);
+            this.panelShadow.Size = new System.Drawing.Size(872, 10);
             this.panelShadow.TabIndex = 2;
             // 
             // panelMain
@@ -231,7 +231,7 @@
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Location = new System.Drawing.Point(220, 69);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(785, 457);
+            this.panelMain.Size = new System.Drawing.Size(872, 457);
             this.panelMain.TabIndex = 3;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -249,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 526);
+            this.ClientSize = new System.Drawing.Size(1092, 526);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelT);

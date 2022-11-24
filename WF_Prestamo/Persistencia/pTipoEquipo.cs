@@ -8,7 +8,7 @@ using System.Data.SQLite;
 
 namespace WF_Prestamo.Persistencia
 {
-    internal class pTipoEquipo
+    public class pTipoEquipo
     {
         public static List<TipoEquipo> GetAll()
         {
@@ -26,7 +26,6 @@ namespace WF_Prestamo.Persistencia
             }
             return tipoEquipos;
         }
-
         public static TipoEquipo GetById(int id)
         {
             TipoEquipo tipoEquipo = new TipoEquipo();

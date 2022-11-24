@@ -19,7 +19,6 @@ namespace WF_Prestamo.Test.Forms
             InitializeComponent();
             Conexion.OpenConexion();
             profesorBindingSource.Add(pProfesor.GetById(id));
-            Conexion.CloseConexion();
         }
         public modificarProfesor(Profesor p)
         {
@@ -48,6 +47,11 @@ namespace WF_Prestamo.Test.Forms
         }
 
         private void textApellidoP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modificarProfesor_Load(object sender, EventArgs e)
         {
 
         }
